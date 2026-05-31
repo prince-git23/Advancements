@@ -1,16 +1,71 @@
-# React + Vite
+# React Props - Job Listings Mini Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was built to understand and practice the concept of Props in React. The application displays multiple job opening cards using reusable React components and dynamic data rendering.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The application showcases job openings from leading technology companies such as Google, Microsoft, Amazon, Meta, Apple, Netflix, NVIDIA, Adobe, Uber, and OpenAI.
 
-## React Compiler
+Each job card displays:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Company Logo
+* Company Name
+* Job Title
+* Date Posted
+* Employment Type
+* Experience Level
+* Hourly Pay
+* Job Location
 
-## Expanding the ESLint configuration
+## Concepts Practiced
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Props
+
+* Passing data from parent components to child components.
+* Using props to render dynamic content.
+* Making components reusable and scalable.
+
+### Reusable Components
+
+* Created a JobCard component.
+* Used the same component multiple times with different data.
+* Reduced code duplication through component reusability.
+
+### Dynamic Rendering
+
+* Stored job information in an array of objects.
+* Used the `map()` function to render multiple job cards.
+* Generated UI dynamically based on the provided data.
+
+### React Fundamentals
+
+* Functional Components
+* JSX
+* Props
+* Array Mapping
+* Component Composition
+
+## Technologies Used
+
+* React.js
+* JavaScript (ES6+)
+* Vite
+* HTML5
+* CSS3
+
+## Learning Outcomes
+
+Through this project, I learned:
+
+* How to pass data using props.
+* How to create reusable React components.
+* How to render lists dynamically using `map()`.
+* How to structure React applications using component-based architecture.
+* How to build maintainable and scalable user interfaces.
+
+## Future Improvements
+
+* Add search and filtering functionality.
+* Connect the application to a real API.
+* Add job details page using React Router.
+* Implement responsive design enhancements.
