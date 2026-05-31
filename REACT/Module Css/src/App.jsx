@@ -7,6 +7,7 @@ const App = () => {
     <div>
       <Button />
       <Header />
+      <h2 style={{ textAlign: 'center', marginTop: '20px'}}>Just Learning Module CSS and Integration of Tailwind CSS</h2>
     </div>
   )
 }
