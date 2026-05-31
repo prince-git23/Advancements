@@ -13,10 +13,13 @@ html,body{
 .parent{
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card{
     margin: 20px;
+    
     height :400px;
     width: 300px;
     background-color: rgb(200, 197, 197);
@@ -31,10 +34,10 @@ html,body{
     
 }
 .card img{
-  margin: 10px ;
+  
     object-fit: cover;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 .top button{
@@ -78,14 +81,13 @@ html,body{
 }
 .bottom button{
     padding: 10px;
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    border: 0px solid rgb(0, 0, 0);
+    background-color: black;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 20px;
     cursor: pointer;
 }
 .bottom p{
     font-size: 12px;
-    padding: 5px;
     font-weight: normal;
 }
