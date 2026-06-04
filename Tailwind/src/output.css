@@ -60,6 +60,8 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --padding-10: 100px;
+    --padding-c-50: 50px;
   }
 }
 @layer base {
@@ -381,6 +383,9 @@
   .bg-pink-400 {
     background-color: var(--color-pink-400);
   }
+  .bg-pink-500 {
+    background-color: var(--color-pink-500);
+  }
   .bg-purple-500 {
     background-color: var(--color-purple-500);
   }
@@ -399,6 +404,9 @@
   .bg-yellow-500 {
     background-color: var(--color-yellow-500);
   }
+  .p-0 {
+    padding: calc(var(--spacing) * 0);
+  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
@@ -406,7 +414,22 @@
     padding: calc(var(--spacing) * 5);
   }
   .p-10 {
-    padding: calc(var(--spacing) * 10);
+    padding: var(--padding-10);
+  }
+  .p-c-50 {
+    padding: var(--padding-c-50);
+  }
+  .pt-c-50 {
+    padding-top: var(--padding-c-50);
+  }
+  .pr-c-50 {
+    padding-right: var(--padding-c-50);
+  }
+  .pb-c-50 {
+    padding-bottom: var(--padding-c-50);
+  }
+  .pl-c-50 {
+    padding-left: var(--padding-c-50);
   }
   .text-2xl {
     font-size: var(--text-2xl);
