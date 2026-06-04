@@ -5,7 +5,14 @@
     <link rel="stylesheet" href="./src/output.css">
     <script>
         function changeMode(){
-            document.getElementById('root').className='dark'
+            const classname = document.getElementById('root').className
+            if(classname==("dark")){
+                document.getElementById('root').className = "light"
+            }
+            else{
+                document.getElementById('root').className = "dark"
+            }
+            
         }
     </script>
 </head>
