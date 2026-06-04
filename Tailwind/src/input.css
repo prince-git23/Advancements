@@ -1,9 +1,3 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 /* Breakpoint Customization */
-@theme{
-    /* --breakpoint-sm:700px;
-    /* Size Customization */
-    /* --padding-10:100px;
-    --padding-c-50:50px; */ */
-}
