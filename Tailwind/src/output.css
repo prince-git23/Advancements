@@ -640,6 +640,16 @@
       line-height: var(--tw-leading, var(--text-9xl--line-height));
     }
   }
+  .dark\:bg-black {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-black);
+    }
+  }
+  .dark\:bg-gray-500 {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-gray-500);
+    }
+  }
   .dark\:bg-slate-600 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-slate-600);
@@ -648,6 +658,11 @@
   .dark\:bg-slate-800 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-slate-800);
+    }
+  }
+  .dark\:text-white {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-white);
     }
   }
 }
