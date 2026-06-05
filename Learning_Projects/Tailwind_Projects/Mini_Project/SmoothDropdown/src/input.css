@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@layer{
+    .image-gallery{
+        @apply size-80 rounded-3xl transition duration-1000 hover:scale-110 border border-white hover:border-2 hover:border-slate-500 hover:brightness-150
+    }
+}
