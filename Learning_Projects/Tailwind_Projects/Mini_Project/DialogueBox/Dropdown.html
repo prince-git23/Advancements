@@ -5,14 +5,16 @@
     <link rel="stylesheet" href="./src/output.css">
 </head>
 <body class="bg-gray-400 h-screen flex flex-wrap justify-center items-center">
-    <div class="bg-white w-80 ">
-        <div class="p-2 flex gap-2">
+    <div class="bg-white w-80 rounded-2xl">
+        <div class="p-2 flex gap-2 ">
             <img class="size-10 rounded-full  " src="https://st.depositphotos.com/57803962/57302/v/450/depositphotos_573023622-stock-illustration-warning-sign-icon-vector-illustration.jpg " alt="">
-            <div>
-                <h1 class="text-xs font-bold">Deactivate account</h1>
+            <div class="p-2">
+                <h1 class="text-xs font-bold mb-1">Deactivate account</h1>
                 <p class="text-xs text-gray-600">Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone.</p>
-                <button>Cancel</button>
-                <button>Deactivate</button>
+                <div class="flex gap-2 mt-4 justify-end">
+                    <button class="btn-primary ">Cancel</button>
+                    <button class="btn-primary bg-orange-700 text-white ">Deactivate</button>
+                </div>
             </div>
         </div>
     </div>
