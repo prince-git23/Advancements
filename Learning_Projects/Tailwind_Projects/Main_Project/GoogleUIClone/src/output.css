@@ -205,6 +205,12 @@
   .left-3 {
     left: calc(var(--spacing) * 3);
   }
+  .left-13 {
+    left: calc(var(--spacing) * 13);
+  }
+  .left-103 {
+    left: calc(var(--spacing) * 103);
+  }
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
   }
@@ -269,6 +275,9 @@
       margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
+  .rounded {
+    border-radius: 0.25rem;
+  }
   .rounded-3xl {
     border-radius: var(--radius-3xl);
   }
@@ -291,11 +300,20 @@
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);
   }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
   }
   .text-center {
     text-align: center;
@@ -309,6 +327,9 @@
   .text-\[16px\] {
     font-size: 16px;
   }
+  .text-gray-100 {
+    color: var(--color-gray-100);
+  }
   .text-gray-700 {
     color: var(--color-gray-700);
   }
@@ -318,6 +339,13 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .hover\:bg-gray-200 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-200);
+      }
+    }
   }
   .hover\:underline {
     &:hover {
