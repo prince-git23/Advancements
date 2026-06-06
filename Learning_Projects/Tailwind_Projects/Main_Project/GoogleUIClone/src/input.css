@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@layer{
+    .btn-primary{
+        @apply text-xs border border-orange-600 p-1 font-bold rounded cursor-pointer hover:bg-orange-400
+    }
+}
