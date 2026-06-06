@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @layer{
     .btn-primary{
         @apply text-xs border border-orange-600 p-1 font-bold rounded cursor-pointer hover:bg-orange-400
