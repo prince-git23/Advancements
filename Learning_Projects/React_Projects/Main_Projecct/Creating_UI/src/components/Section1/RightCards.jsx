@@ -10,10 +10,10 @@ const RightCards = (props) => {
         <div className=''>
           <p className='text-lg leading-normal text-white mb-10'>{props.content}</p>
           <div className='flex justify-between'>
-            <button className='bg-blue-500 px-8 py-2 rounded-full text-white hover:scale-105 hover:bg-blue-700' id="btn">
+            <button className={`px-8 py-2 rounded-full text-white hover:scale-105 ${props.tag === "UnSatisfied" ? "bg-green-500 hover:bg-green-700" : "bg-blue-500  hover:bg-blue-700"}`}   id="btn">
               {props.tag === "UnSatisfied" ? "UnSatisfied" : "Satisfied"}
             </button>
-            <button className='bg-blue-500 px-4 py-2 rounded-full text-white hover:scale-105 hover:bg-blue-700'><i class="ri-arrow-right-line"></i></button>
+            <button className={` px-4 py-2 rounded-full text-white hover:scale-105 ${props.tag == 'UnSatisfied' ? "bg-green-500 hover:bg-green-700" : 'bg-blue-500 hover:bg-blue-700'}`}><i class="ri-arrow-right-line"></i></button>
           </div>
         </div>
       </div>
