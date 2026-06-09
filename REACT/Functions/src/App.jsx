@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div >
       <button onClick={btnclicked} className='m-2 p-2 border rounded-2xl bg-blue-500 hover:bg-amber-300 transition duration-1000 hover:scale-110'>
-        Click Me
+        Change Mode
       </button>
     </div>
   )
