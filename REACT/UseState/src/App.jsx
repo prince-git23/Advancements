@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Counter from './Counter'
 
 const App = () => {
   const [num, setnum] = useState(10)
@@ -12,6 +13,7 @@ const App = () => {
       <h1>Hello I had a {num}</h1>
       <h2>USername is {user}</h2>
       <button onClick={ChangeNum}>CLick Me</button>
+      <Counter/>
     </div>
   )
 }

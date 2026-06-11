@@ -109,3 +109,13 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+button{
+  margin: 10px 20px;
+  padding: 10px 20px;
+
+}
+
+.h1-counter{
+  font-size: 50px;
+}
