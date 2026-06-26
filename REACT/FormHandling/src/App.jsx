@@ -3,6 +3,7 @@ import React from 'react'
 
 const App = () => {
 
+  //For no page reload
   const submitHandler = (e) => {
     e.preventDefault()
     console.log("Your Form has been submitted")
