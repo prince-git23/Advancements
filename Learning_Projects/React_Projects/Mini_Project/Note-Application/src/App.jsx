@@ -4,12 +4,17 @@ import RightPart from './components/RightPart'
 const App = () => {
   const [note, setNote] = useState("")
   const [details, setDetails] = useState("")
+  const [task, setTask] = useState([])
   
   const submitHandler = (e) => {
     console.log("Note Heading is:",note)
     console.log("Details are:",details)
     e.preventDefault()
 
+    const copyTask = [...task]
+    copyTask.push({note,details})
+
+    setTask(copyTask)
     setNote("")
     setDetails("")
   }
@@ -38,9 +43,9 @@ const App = () => {
           setDetails(e.target.value)
         }}/>
 
-        <button className='bg-white text-black px-5 py-2 border-2 rounded w-full'>Submit</button>
+        <button className='bg-white active:bg-gray-500 text-black px-5 py-2 border-2 rounded w-full'>Submit</button>
       </form>
-      <RightPart/>
+      <RightPart task={task} />
     </div>
   )
 }
