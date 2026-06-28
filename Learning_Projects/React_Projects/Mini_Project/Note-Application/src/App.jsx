@@ -45,7 +45,7 @@ const App = () => {
 
         <button className='bg-white active:bg-gray-500 text-black px-5 py-2 border-2 rounded w-full'>Submit</button>
       </form>
-      <RightPart task={task} />
+      <RightPart task={task} setTask={setTask}/>
     </div>
   )
 }
