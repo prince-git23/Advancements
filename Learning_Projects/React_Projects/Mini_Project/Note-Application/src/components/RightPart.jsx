@@ -12,11 +12,11 @@ const RightPart = (props) => {
 
     return (
         <div className=' p-10 lg:w-1/2 '>
-            <h1 className='text-3xl text-white font-bold py-2'>Your Notes</h1>
+            <h1 className='m-2 text-3xl text-white font-bold py-2'>Your Notes</h1>
             {/* fokkat ki gap hatamne k liye use item-start justify-start */}
             <div className='flex flex-wrap gap-5  overflow-auto item-start'>
                 {props.task.map(function(elem,idx){
-                    return <div key={idx} className='relative flex flex-col item-start h-55 w-40 bg-cover bg-position-[70%_center] bg-[url("https://static.vecteezy.com/system/resources/thumbnails/037/152/688/small_2x/sticky-note-paper-background-free-png.png")] rounded-3xl px-5 pt-5'>
+                    return <div key={idx} className=' m-2 relative flex flex-col item-start h-55 w-40 bg-cover bg-position-[70%_center] bg-[url("https://static.vecteezy.com/system/resources/thumbnails/037/152/688/small_2x/sticky-note-paper-background-free-png.png")] rounded-3xl px-5 pt-5 hover:scale-110 transition duration-1000'>
                         <h3 className='text-black text-2xl leading-tight font-bold'>{elem.note}</h3>
                         <p className='text-gray-600 leading-tight font-medium mt-2'>{elem.details}</p>
                         <h2 className='absolute bottom-3 right-3 hover:scale-125 '><X color="#000000" onClick={()=>{
