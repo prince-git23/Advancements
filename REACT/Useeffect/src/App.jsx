@@ -11,8 +11,6 @@ const App = () => {
     console.log("UseEffect is running...")
   },[num])
 
-
-
   return (
     <div className='box'>
       <h2>{num} {num2}</h2>
