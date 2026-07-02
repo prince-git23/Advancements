@@ -4,15 +4,16 @@ import BottomButtons from './components/BottomButtons'
 
 const App = () => {
   const [userData, setUserData] = useState([])
+  const [index, setIndex] = useState(1);
   const getdata = async () => {
-    const response = await axios.get('https://picsum.photos/v2/list?page=2&limit=30')
+    const response = await axios.get(`https://picsum.photos/v2/list?page=${index}&limit=30`)
     setUserData(response.data)
     console.log(response.data)
   }
 
   useEffect(function(){
     getdata()
-  },[])
+  },[index])
 
   let printUserData = <h3 className='text-gray-400'>No User Available</h3>
   if (userData.length > 0) {
@@ -32,7 +33,8 @@ const App = () => {
       <div className='flex flex-wrap gap-10 '>
         {printUserData}
       </div>
-      <BottomButtons/>
+      <BottomButtons index={index}
+  setIndex={setIndex} />
     </div>
   )
 }
