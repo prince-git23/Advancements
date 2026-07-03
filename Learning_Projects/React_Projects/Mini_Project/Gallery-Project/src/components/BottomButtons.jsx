@@ -1,9 +1,17 @@
 import React, { useState } from 'react'
 
 const BottomButtons = ({ index, setIndex , userData , setUserData}) => {
+    const [pressed, setPressed] = useState(false)
   return (
     <div className='fixed bottom-5 left-1/2 -translate-x-1/2 flex gap-10 p-4'>
-      <button onClick={()=>{
+      <button onMouseDown={()=>{
+        setPressed(false)
+      }} 
+      onMouseUp={()=>{
+        setPressed(true)
+      }} 
+      style={{opacity: index==1 ?0.5 : 1 ,transform: pressed ? "scale(0.95)" : "scale(1)"}} 
+      onClick={()=>{
           if(index>1){
               setIndex(index-1)
               setUserData([])
