@@ -10,3 +10,14 @@ html,body{
     background-color: rgb(3, 3, 3);
     color: white;
 }
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: gray;
+}
+.nav2{
+  display: flex;
+  gap: 20px;
+}
