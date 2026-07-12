@@ -3,11 +3,11 @@ import Nav2 from './Nav2'
 import { ThemeDataContext } from '../context/ThemeContext'
 
 const Navbar = () => {
-    const data = useContext(ThemeDataContext)
+    const [light] = useContext(ThemeDataContext)
 
 
   return (
-    <div className='nav'>
+    <div className={`${light} nav`}>
       <h2>Prince's Workspace</h2>
       <Nav2 />
     </div>
