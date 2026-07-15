@@ -18,12 +18,10 @@ const Feed = () => {
         .then((res)=>{
             setPosts(res.data.posts)
         })
-    })
-
+    },[])
     
 
     return (
-
         <section className='feed-section' >
 
             {

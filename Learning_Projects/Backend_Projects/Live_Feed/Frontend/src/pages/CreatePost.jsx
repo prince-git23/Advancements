@@ -1,14 +1,38 @@
 import React from 'react'
+import axios from 'axios'
 
-const CreatePost = () => {
-  return (
-    <section className='create-post-section'>
-        <h1>Create Post</h1>
-        <input type="file" name='image' accept='image/*'/>
-        <input type="text" name='caption' required/>
-        <button type='submit'>Submit</button>
-    </section>
-  )
+    const CreatePost = () => {
+
+        const handleSubmit = async (e) => {
+            e.preventDefault() //Not everytime reload all webpage
+
+            const formData = new FormData(e.target)
+
+            axios.post("http://localhost:3000/create-post",formData)
+            .then((res)=>{
+                alert("Post Created Successfully")
+                e.target.reset()
+            })
+
+            .catch((err)=>{
+                console.log(err)
+                alert("Error Creating Post")
+            })
+
+
+        }
+
+    return (
+        <section className='create-post-section'>
+            <h1>Create Post</h1>
+
+            <form onSubmit={handleSubmit}>
+                <input type="file" name='image' accept='image/*' />
+                <input type="text" name='caption' required />
+                <button type='submit'>Submit</button>
+            </form>
+        </section>
+    )
 }
 
 export default CreatePost
