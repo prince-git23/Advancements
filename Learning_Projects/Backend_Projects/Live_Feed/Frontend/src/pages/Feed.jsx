@@ -16,12 +16,10 @@ const Feed = () => {
 
         axios.get("http://localhost:3000/posts")
         .then((res)=>{
-
             setPosts(res.data.posts)
-
         })
-        
-    },[])
+    })
+
     
 
     return (

@@ -4,10 +4,14 @@ const multer = require('multer')
 const uploadFile = require("./services/storage.service")
 const cors = require('cors')
 const app = express()
+
+
 app.use(cors())
 const upload = multer({
      storage :  multer.memoryStorage()
 })
+
+
 app.use(express.json())
 
 app.post('/create-post', upload.single('image'), async (req, res) => {
@@ -25,11 +29,11 @@ app.post('/create-post', upload.single('image'), async (req, res) => {
           
 })
 
-app.get('posts',async(req,res)=>{
-     const posts = postModel.find()
+app.get('/posts',async(req,res)=>{
+     const posts =await postModel.find()
 
      res.status(200).json({
-          message : "Posts Fetcheed Successfully",posts
+          message : "Posts Fetched Successfully",posts
      })
 })
 
