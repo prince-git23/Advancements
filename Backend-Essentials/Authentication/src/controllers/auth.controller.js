@@ -4,6 +4,16 @@ const jwt = require('jsonwebtoken')
 async function registerUser(req,res){
     const {username, email , password} = req.body
 
+    const UserAlreadyExits = await userModel.findOne({
+        email
+    })
+
+    if(UserAlreadyExits){
+        return res.status(409).json({
+            message:"User Already Exists"
+        })
+    }
+
     const user = await userModel.create({
         username ,email, password
     })
@@ -12,9 +22,13 @@ async function registerUser(req,res){
         id : user._id
     },process.env.JWT_SECRET)
 
+    res.cookie("token",token)
+
     res.status(201).json({
         message:"User registered successfully",user,token
     })
+
+    
 }
 
 module.exports = {registerUser};
