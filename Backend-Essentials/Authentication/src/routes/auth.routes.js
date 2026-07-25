@@ -5,13 +5,6 @@ const router = express.Router()
 
 router.post('/register',authController.registerUser)
 
-router.get('/test',(req,res)=>{
-    console.log("Cookies:",req.cookies)
-    res.json({
-        message:"Cookies Fetched",
-        cookies: req.cookies 
-    })
-})
 
 
 module.exports = router
