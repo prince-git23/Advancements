@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+*Student_Dropout_Prediction_Report*
 *.local
 
 # Editor directories and files
