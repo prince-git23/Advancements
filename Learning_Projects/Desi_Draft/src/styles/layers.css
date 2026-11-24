@@ -1,0 +1,15 @@
+/**
+ * One z-index scale for the whole site. Components use var(--z-*) only.
+ */
+:root {
+  --z-blobs: 0;
+  --z-content: 10;
+  --z-stickers: 20;
+  --z-pills: 40;
+  --z-heading: 50;
+  --z-header: 9000;
+  --z-work-menu: 9500;
+  --z-modal: 9800;
+  --z-transition: 10000;
+  --z-preloader: 11000;
+}

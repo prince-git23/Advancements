@@ -1,13 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
-import { QRCodeSVG } from 'qrcode.react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { gsap, ScrollTrigger, scrollToId } from '../lib/smooth';
-import { site } from '../data/site';
+import { gsap, ScrollTrigger } from '../lib/smooth';
+import { scrollToTarget } from '../lib/scroll';
+import { hasWhatsApp, site } from '../data/site';
 import { Logo } from './art/Logo';
 import { burstPath } from './art/shapes';
 import { Modal } from './Modal';
 import { WorkMenu } from './layout/WorkMenu';
+
+// qrcode.react is only needed once the WhatsApp dialog is opened.
+const QrPanel = lazy(() => import('./QrPanel').then((m) => ({ default: m.QrPanel })));
 
 const WhatsAppGlyph = ({ size = 26 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -20,10 +23,11 @@ const NAV_SECTIONS: { id: string; theme: 'light' | 'dark' }[] = [
   { id: 'hero', theme: 'light' },
   { id: 'intro', theme: 'dark' },
   { id: 'manifesto', theme: 'dark' },
-  { id: 'work', theme: 'light' },
+  // the work section sits on cream since the portfolio rebuild, so the header
+  // must switch to ink here — 'light' means light type over a dark field
+  { id: 'work', theme: 'dark' },
   { id: 'team', theme: 'light' },
   { id: 'services', theme: 'dark' },
-  { id: 'clients', theme: 'dark' },
   { id: 'footer', theme: 'light' },
 ];
 
@@ -42,9 +46,14 @@ export function Header({ fixedTheme }: { fixedTheme?: 'light' | 'dark' }) {
       NAV_SECTIONS.forEach((s) => {
         const el = document.getElementById(s.id);
         if (!el) return;
+        // A pinned section leaves its pin spacer between itself and the next
+        // section. Measuring the element alone left a dead zone where no
+        // trigger was active and the header kept the previous (dark) scrim over
+        // the cream intro. The spacer belongs to the section it wraps.
+        const host = el.parentElement?.classList.contains('pin-spacer') ? el.parentElement : el;
         triggers.push(
           ScrollTrigger.create({
-            trigger: el,
+            trigger: host,
             start: 'top 56px',
             end: 'bottom 56px',
             onToggle: (self) => {
@@ -117,10 +126,16 @@ export function Header({ fixedTheme }: { fixedTheme?: 'light' | 'dark' }) {
       <header
         ref={headerRef}
         data-theme={active}
-        className={`fixed inset-x-0 top-0 z-[9999] flex h-[72px] items-center justify-between px-4 transition-colors duration-300 sm:px-6 ${
+        className={`fixed inset-x-0 top-0 z-[var(--z-header)] flex h-[72px] items-center justify-between px-4 transition-colors duration-300 sm:px-6 ${
           active === 'light' ? 'text-cream' : 'text-ink'
         }`}
       >
+        {/* The header floats over every section, so the mark and the burst need
+            their own ground. Without it the wordmark sat on top of section
+            headlines and case-study images as they scrolled past. The scrim is
+            themed with the header and fades out before it reaches content. */}
+        <div aria-hidden="true" className="header-scrim pointer-events-none absolute inset-x-0 top-0 -z-10" />
+
         <WorkMenu open={menuOpen} onClose={() => setMenuOpen(false)} onEnter={openMenu} onLeave={scheduleClose} />
 
         <button
@@ -153,7 +168,7 @@ export function Header({ fixedTheme }: { fixedTheme?: 'light' | 'dark' }) {
         <button
           aria-label="Desi Draft home"
           onClick={() => {
-            if (pathname === '/') scrollToId('hero');
+            if (pathname === '/') scrollToTarget('#hero');
             else navigate('/');
           }}
           className="absolute left-1/2 top-1/2 w-[136px] -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 hover:scale-[1.04] sm:w-[148px]"
@@ -161,22 +176,27 @@ export function Header({ fixedTheme }: { fixedTheme?: 'light' | 'dark' }) {
           <Logo className="w-full" color="currentColor" strokeWidth={2.2} />
         </button>
 
-        <button
-          aria-label="Chat on WhatsApp"
-          onClick={() => setModal(true)}
-          className="relative z-10 grid h-11 w-11 place-items-center rounded-full transition-transform duration-300 hover:scale-110"
-        >
-          <WhatsAppGlyph />
-        </button>
+        {/* No verified number, no button: a WhatsApp dialog with a dead link is
+            worse than no WhatsApp at all. Set site.whatsapp to bring it back. */}
+        {hasWhatsApp && (
+          <button
+            aria-label="Chat on WhatsApp"
+            onClick={() => setModal(true)}
+            className="relative z-10 grid h-11 w-11 place-items-center rounded-full transition-transform duration-300 hover:scale-110"
+          >
+            <WhatsAppGlyph />
+          </button>
+        )}
       </header>
 
+      {hasWhatsApp && (
       <Modal open={modal} onClose={() => setModal(false)} title="WhatsApp Us">
         <p className="mb-5 text-[15px] leading-[1.45] text-ink/70">
           Scan the QR code to chat with us via your smartphone.
         </p>
-        <div className="mx-auto mb-6 grid w-fit place-items-center rounded-[16px] bg-white p-4">
-          <QRCodeSVG value={site.whatsapp} size={170} bgColor="#ffffff" fgColor="#0A0A0A" level="M" />
-        </div>
+        <Suspense fallback={<div className="mx-auto mb-6 h-[202px] w-[202px] rounded-[16px] bg-white/70" aria-hidden="true" />}>
+          <QrPanel value={site.whatsapp} />
+        </Suspense>
         <motion.a
           href={site.whatsapp}
           target="_blank"
@@ -187,6 +207,7 @@ export function Header({ fixedTheme }: { fixedTheme?: 'light' | 'dark' }) {
           <WhatsAppGlyph size={18} /> chat via desktop
         </motion.a>
       </Modal>
+      )}
     </>
   );
 }

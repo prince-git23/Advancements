@@ -1,0 +1,307 @@
+/**
+ * ProfileCard — Desi Draft surfaces.
+ * Tilt/glare/parallax values are written as CSS custom properties by the
+ * component's single rAF loop. Nothing here animates while a card is idle.
+ */
+.pc {
+  --pc-ink: #0a0a0a;
+  --pc-muted: rgba(10, 10, 10, 0.62);
+  --pc-line: rgba(10, 10, 10, 0.12);
+  --pc-rx: 0deg;
+  --pc-ry: 0deg;
+  --pc-px: 0px;
+  --pc-py: 0px;
+  --pc-gx: 50%;
+  --pc-gy: 50%;
+  height: 100%;
+  perspective: 1100px;
+}
+
+.pc[data-theme='dark'] {
+  --pc-ink: #eeeae3;
+  --pc-muted: rgba(238, 234, 227, 0.66);
+  --pc-line: rgba(238, 234, 227, 0.16);
+}
+
+.pc-tilt {
+  height: 100%;
+  border-radius: var(--pc-radius);
+  transform: rotateX(var(--pc-rx)) rotateY(var(--pc-ry));
+  transform-style: preserve-3d;
+}
+
+/* Only the card under the pointer gets a compositor hint. */
+.pc-tilt[data-active='true'] {
+  will-change: transform;
+}
+
+.pc-shell {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--pc-line);
+  border-radius: var(--pc-radius);
+  background: var(--pc-surface);
+  color: var(--pc-ink);
+  box-shadow:
+    0 1px 0 rgba(10, 10, 10, 0.08),
+    0 26px 50px -24px rgba(0, 0, 0, 0.55);
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pc:hover .pc-shell {
+    transform: translateY(-5px);
+    box-shadow:
+      0 1px 0 rgba(10, 10, 10, 0.08),
+      0 34px 60px -22px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.pc-media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  flex: none;
+  overflow: hidden;
+  background: var(--pc-accent);
+  isolation: isolate;
+}
+
+.pc-portrait {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: translate3d(var(--pc-px), var(--pc-py), 0) scale(1.055);
+}
+
+/* No portrait yet: a brand-palette poster, never a broken image. */
+.pc-fallback {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 18% 8%, rgba(255, 255, 255, 0.32) 0%, transparent 58%),
+    linear-gradient(155deg, var(--pc-accent) 0%, var(--pc-accent) 58%, var(--pc-surface) 160%);
+  transform: translate3d(var(--pc-px), var(--pc-py), 0) scale(1.055);
+}
+
+.pc-fallback::before {
+  content: '';
+  position: absolute;
+  inset: auto -22% -38% -22%;
+  height: 76%;
+  border-radius: 50% 50% 0 0;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.pc-fallback::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+  background-image: radial-gradient(rgba(10, 10, 10, 0.32) 0.5px, transparent 0.6px);
+  background-size: 4px 4px;
+}
+
+.pc-monogram {
+  position: absolute;
+  left: 5%;
+  bottom: -0.14em;
+  z-index: 1;
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(7rem, 12vw, 11rem);
+  line-height: 0.76;
+  letter-spacing: -0.06em;
+  color: var(--pc-accent-ink);
+  opacity: 0.95;
+  text-transform: uppercase;
+}
+
+.pc-glare,
+.pc-foil {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.pc-glare {
+  background: radial-gradient(
+    circle at var(--pc-gx) var(--pc-gy),
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.22) 32%,
+    transparent 62%
+  );
+  mix-blend-mode: soft-light;
+  transition: opacity 0.4s ease;
+}
+
+.pc-foil {
+  background: linear-gradient(
+    118deg,
+    transparent 22%,
+    #4b63e8 34%,
+    #e8b4f5 44%,
+    #e4fba8 54%,
+    #e8603c 64%,
+    transparent 78%
+  );
+  background-size: 190% 190%;
+  background-position: var(--pc-gx) var(--pc-gy);
+  mix-blend-mode: overlay;
+  transition: opacity 0.4s ease;
+}
+
+.pc-tilt[data-active='true'] .pc-glare {
+  opacity: var(--pc-glare);
+}
+
+.pc-tilt[data-active='true'] .pc-foil {
+  opacity: var(--pc-holo);
+}
+
+.pc-sticker {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.22));
+}
+
+.pc-body {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 18px 20px 20px;
+}
+
+.pc-status {
+  display: inline-block;
+  margin-bottom: 10px;
+  border-radius: 999px;
+  padding: 4px 9px 5px;
+  background: var(--pc-accent);
+  color: var(--pc-accent-ink);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.pc-name {
+  margin: 0;
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.pc-role {
+  margin: 7px 0 0;
+  min-height: 1.2em;
+  color: var(--pc-muted);
+  font-size: 13px;
+  line-height: 1.2;
+  text-transform: lowercase;
+}
+
+.pc-intro {
+  margin: 8px 0 0;
+  max-width: 30ch;
+  color: var(--pc-muted);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.pc-handle {
+  margin: 6px 0 0;
+  color: var(--pc-muted);
+  font-size: 12px;
+}
+
+.pc-foot {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.pc-mark {
+  color: var(--pc-muted);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pc-contact {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--pc-line);
+  border-radius: 999px;
+  min-height: 34px;
+  padding: 7px 12px;
+  color: var(--pc-ink);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: lowercase;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.pc-contact:hover {
+  border-color: var(--pc-accent);
+  background: var(--pc-accent);
+  color: var(--pc-accent-ink);
+}
+
+.pc-contact:focus-visible {
+  outline: 2px solid var(--pc-ink);
+  outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+  .pc-foil {
+    display: none;
+  }
+  .pc-monogram {
+    font-size: clamp(6rem, 34vw, 9rem);
+  }
+  .pc-contact {
+    min-height: 40px;
+    padding: 9px 13px;
+  }
+}
+
+/* ---- portrait state ------------------------------------------------------
+   A card with a photograph is a portrait card. A card waiting on one is a
+   colour poster with the monogram, so it is flattened: the info band stays the
+   same size and the section stops reading as six empty frames. */
+.pc[data-portrait='false'] .pc-media {
+  aspect-ratio: 16 / 11;
+}
+
+.pc[data-portrait='false'] .pc-monogram {
+  font-size: clamp(4.5rem, 8vw, 7.5rem);
+  bottom: -0.1em;
+}

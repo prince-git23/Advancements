@@ -1,0 +1,43 @@
+/**
+ * ScrollStack geometry (ReactBits source, adapted).
+ *
+ * `.scroll-stack-card` keeps only what the stack needs — size, radius,
+ * transform origin, compositing hint — because the project cards supply their
+ * own surface. The demo's fixed 20rem white panel would flatten this layout.
+ */
+.scroll-stack {
+  position: relative;
+  width: 100%;
+}
+
+.scroll-stack--contained {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.scroll-stack__inner {
+  position: relative;
+}
+
+.scroll-stack__slot {
+  position: sticky;
+}
+
+.scroll-stack-card {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 20px;
+  transform-origin: 50% 0;
+  will-change: transform;
+}
+
+.scroll-stack-card__shade {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: #0a0a0a;
+  opacity: var(--scroll-stack-dim, 0);
+  pointer-events: none;
+}

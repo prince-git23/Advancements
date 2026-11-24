@@ -1,3 +1,18 @@
+/** The one sticker scale from the spec: sm / md / lg / xl. */
+export const STICKER_SCALE = {
+  sm: 56,
+  md: 84,
+  lg: 112,
+  xl: 136,
+} as const;
+
+export type StickerSize = keyof typeof STICKER_SCALE;
+
+/** Accepts a scale key or raw px. */
+export function stickerPx(size: StickerSize | number = 'md') {
+  return typeof size === 'number' ? size : STICKER_SCALE[size];
+}
+
 /**
  * Sticker sizes, in px, in one place.
  *
@@ -17,13 +32,13 @@ export const SZ = {
   heroSparkle: 48,
   heroSound: 44,
 
-  intro: 72,
+  intro: 84,
   manifesto: 64,
 
   team: 104,
   teamSmall: 84,
 
-  services: 70,
+  services: 84,
   clients: 80,
 
   footerMin: 100,

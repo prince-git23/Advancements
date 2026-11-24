@@ -13,6 +13,9 @@ dist-ssr/
 # Local configuration
 *.local
 
+# Enquiry backend data — people's names and email addresses
+server/data/
+
 # Logs
 logs/
 *.log

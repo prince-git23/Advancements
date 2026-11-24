@@ -1,188 +1,98 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from '../lib/smooth';
-import { useIsTouch, usePrefersReducedMotion } from '../lib/hooks';
-import { services } from '../data/site';
-import { Sticker } from './art/Stickers';
-import { WobblyRule } from './art/Doodles';
-import { SZ } from './art/sizes';
+import { usePrefersReducedMotion } from '../lib/hooks';
+import { serviceGroups } from '../data/site';
+import { EnquiryButton } from './ContactDialog';
+import { Chapter } from './ui/Chapter';
+import { AccordionGallery } from './ui/AccordionGallery';
 
+/**
+ * Services as an accordion gallery: one wide panel of work, four slim spines
+ * that still name their discipline. The data is untouched — every title,
+ * description, feature and evidence link is read from `serviceGroups`.
+ */
 export function Services() {
   const sectionRef = useRef<HTMLElement>(null);
-  const pileRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [active, setActive] = useState<number | null>(null);
-  const touch = useIsTouch();
   const reduced = usePrefersReducedMotion();
-
-  const rest = (i: number) => ({
-    x: 0,
-    y: services[i].offsetY,
-    rotation: services[i].rotate,
-  });
-
-  const apply = (next: number | null) => {
-    if (touch) {
-      cardRefs.current.forEach((el, i) => {
-        if (!el) return;
-        gsap.to(el, {
-          y: next === i ? services[i].offsetY - 6 : services[i].offsetY,
-          rotation: next === i ? 0 : services[i].rotate,
-          scale: next === i ? 1.04 : 1,
-          duration: 0.4,
-          ease: 'power3.out',
-          overwrite: 'auto',
-        });
-      });
-      return;
-    }
-    cardRefs.current.forEach((el, i) => {
-      if (!el) return;
-      if (next === null) {
-        gsap.to(el, {
-          ...rest(i),
-          scale: 1,
-          zIndex: i + 1,
-          duration: 0.6,
-          ease: 'power3.out',
-          overwrite: 'auto',
-        });
-      } else if (i === next) {
-        gsap.to(el, {
-          x: 0,
-          y: services[i].offsetY - 40,
-          rotation: 0,
-          scale: 1.25,
-          zIndex: 60,
-          duration: 0.5,
-          ease: 'power3.out',
-          overwrite: 'auto',
-        });
-      } else {
-        const dist = i - next;
-        const push = 118 + Math.max(0, Math.abs(dist) - 1) * 14;
-        gsap.to(el, {
-          x: dist < 0 ? -push : push,
-          y: services[i].offsetY + 6,
-          rotation: 0,
-          scale: 1,
-          zIndex: 20 - Math.abs(dist),
-          duration: 0.5,
-          ease: 'power3.out',
-          overwrite: 'auto',
-        });
-      }
-    });
-  };
 
   useEffect(() => {
     const section = sectionRef.current;
-    const pile = pileRef.current;
-    if (!section || !pile) return;
+    if (!section || reduced) return;
 
-    cardRefs.current.forEach((el, i) => {
-      if (el) gsap.set(el, { ...rest(i), transformOrigin: '50% 60%' });
-    });
-
-    if (reduced) return;
     const ctx = gsap.context(() => {
-      gsap.from('.svc-card', {
-        y: touch ? 40 : 150,
-        autoAlpha: 0,
-        duration: touch ? 0.55 : 0.85,
-        ease: 'power3.out',
-        stagger: 0.1,
-        scrollTrigger: { trigger: pile, start: 'top 88%' },
-      });
+      // 135%, not 110%: the mask box is 0.2em taller than the line so
+      // descenders are not cut off, and the line has to clear that too.
       gsap.from('.svc-head-inner', {
-        yPercent: 110,
-        duration: 1.05,
+        yPercent: 135,
+        duration: 1,
         ease: 'power4.out',
         stagger: 0.08,
-        scrollTrigger: { trigger: '.svc-heading', start: 'top 85%' },
+        scrollTrigger: { trigger: '.svc-heading', start: 'top 86%', once: true },
       });
-    }, sectionRef.current);
-    return () => ctx.revert();
-  }, [reduced, touch]);
+      gsap.from('.svc-gallery', {
+        y: 30,
+        autoAlpha: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.svc-gallery', start: 'top 88%', once: true },
+      });
+    }, section);
 
-  useEffect(() => {
-    apply(active);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [active]);
+    return () => ctx.revert();
+  }, [reduced]);
 
   return (
     <section
       id="services"
       ref={sectionRef}
-      className="relative overflow-hidden bg-cream pb-[10vh] pt-[14vh]"
+      data-theme="studio"
+      className="relative scroll-mt-[72px] bg-cream pb-[7vh] pt-[6vh] text-ink md:pb-[8vh] md:pt-[7vh]"
     >
-      <div className="svc-heading mx-auto mb-[8vh] max-w-[1200px] px-5 text-center">
-        <h2 className="display text-ink text-[clamp(2rem,4.6vw,4rem)]">
-          <span className="mask-line inline-block">
-            <span className="svc-head-inner inline-block">call us if you&nbsp;</span>
-          </span>
-          <span className="mask-line inline-block">
-            <span className="svc-head-inner serif-i inline-block">need:</span>
-          </span>
-        </h2>
-      </div>
+      <div className="dd-page">
+        <Chapter no="03" name="the making" className="mb-4" />
+        <div className="svc-heading grid gap-6 border-t border-ink/20 pt-5 md:grid-cols-12 md:items-end">
+          <h2 className="display type-section md:col-span-7">
+            <span className="mask-line -mb-[0.2em] block pb-[0.2em]">
+              <span className="svc-head-inner block">five things,</span>
+            </span>
+            <span className="mask-line -mb-[0.2em] block pb-[0.2em]">
+              <span className="svc-head-inner block">
+                done <span className="serif-i">properly.</span>
+              </span>
+            </span>
+          </h2>
+          <p className="lede max-w-[42ch] text-ink/70 md:col-span-5 md:justify-self-end">
+            A service is a promise; the portfolio is the evidence. Every group below has a project or a
+            format behind it — and we tell you which.
+          </p>
+        </div>
 
-      <div className="relative">
-        <div
-          ref={pileRef}
-          className="no-scrollbar mx-auto flex w-full max-w-[1500px] items-start justify-center overflow-x-auto px-6 pb-24 pt-16 md:overflow-visible md:pb-32"
-          onPointerLeave={() => {
-            if (!touch) setActive(null);
-          }}
-        >
-          {services.map((s, i) => (
-            <div
-              key={s.id}
-              ref={(el) => {
-                cardRefs.current[i] = el;
-              }}
-              onPointerEnter={() => {
-                if (!touch) setActive(i);
-              }}
-              onClick={() => {
-                if (touch) setActive((cur) => (cur === i ? null : i));
-              }}
-              className="svc-card relative w-[74vw] shrink-0 cursor-pointer rounded-[16px] p-7 md:w-[230px] md:min-h-[340px]"
-              style={{
-                background: s.bg,
-                color: s.text,
-                marginLeft: i === 0 ? 0 : undefined,
-                zIndex: i + 1,
-                boxShadow: '0 16px 34px rgba(0,0,0,.14)',
-                // overlap on desktop
-                ['--overlap' as string]: '-118px',
-                transitionProperty: 'box-shadow',
-              }}
-              data-active={active === i}
-            >
-              <div className="pointer-events-none absolute -right-4 -top-8 z-20" style={{ animation: active === i ? 'stickerWiggle .5s ease' : undefined }}>
-                <Sticker kind={s.sticker} size={SZ.services} rotate={i % 2 ? 10 : -8} />
-              </div>
+        <div className="svc-gallery mt-9">
+          <AccordionGallery items={serviceGroups} />
+        </div>
 
-              <h3 className="display mb-4 text-[26px] leading-[.95]">{s.title}</h3>
-              <WobblyRule className="mb-4 h-[14px] w-full" color="currentColor" strokeWidth={2.2} />
-              <ul className="space-y-[7px]">
-                {s.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-[15px] leading-[1.3] md:text-[16px]">
-                    <span className="mt-[3px] text-[10px] leading-none">✦</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="mt-9 flex flex-col items-start justify-between gap-5 border-t border-ink/20 pt-6 sm:flex-row sm:items-center">
+          <p className="max-w-[38ch] text-[15px] leading-[1.5] text-ink/65">
+            Not sure which you need? Bring the brief — we will tell you what we would actually do, including
+            what to cut.
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <EnquiryButton subject="Project enquiry — services" className="btn btn-primary">
+              start a conversation
+              <span className="btn-arrow" aria-hidden="true">
+                →
+              </span>
+            </EnquiryButton>
+            <Link to="/work" className="btn btn-secondary">
+              see all work
+              <span className="btn-arrow" aria-hidden="true">
+                →
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
-
-      <style>{`
-        @media (min-width: 768px) {
-          .svc-card + .svc-card { margin-left: -118px; }
-        }
-      `}</style>
     </section>
   );
 }

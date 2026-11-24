@@ -13,7 +13,7 @@ const SCENES = [
   { a: '#0A0A0A', b: '#4B63E8', c: '#E8603C' },
 ];
 
-export function HeroMontage({ paused = false, muted = true }: { paused?: boolean; muted?: boolean }) {
+export function HeroMontage({ paused = false }: { paused?: boolean }) {
   const [i, setI] = useState(0);
   const [reduced, setReduced] = useState(false);
 
@@ -23,8 +23,18 @@ export function HeroMontage({ paused = false, muted = true }: { paused?: boolean
 
   useEffect(() => {
     if (paused || reduced) return;
-    const id = window.setInterval(() => setI((n) => (n + 1) % SCENES.length), 2600);
-    return () => window.clearInterval(id);
+    let hidden = document.visibilityState === 'hidden';
+    const onVisibility = () => {
+      hidden = document.visibilityState === 'hidden';
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    const id = window.setInterval(() => {
+      if (!hidden) setI((n) => (n + 1) % SCENES.length);
+    }, 2600);
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibility);
+      window.clearInterval(id);
+    };
   }, [paused, reduced]);
 
   return (
@@ -80,8 +90,6 @@ export function HeroMontage({ paused = false, muted = true }: { paused?: boolean
         className="absolute inset-0"
         style={{ boxShadow: 'inset 0 0 140px 40px rgba(0,0,0,.45)' }}
       />
-      <span className="sr-only">{muted ? 'muted' : 'sound on'} placeholder montage</span>
     </div>
   );
 }
-

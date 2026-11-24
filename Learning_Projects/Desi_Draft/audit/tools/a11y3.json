@@ -1,0 +1,305 @@
+{
+ "route": "/work",
+ "imgs": 6,
+ "noAlt": 0,
+ "h1": 1,
+ "skips": 0,
+ "unnamed": 0,
+ "low": [
+  {
+   "text": "work",
+   "size": 15,
+   "r": 1.2,
+   "cls": "text-[15px] text-white"
+  },
+  {
+   "text": "flora-alchemyy.vercel.app",
+   "size": 10,
+   "r": 1,
+   "cls": "text-[10px] text-cream/90"
+  },
+  {
+   "text": "home, 1440 × 900",
+   "size": 10,
+   "r": 1.08,
+   "cls": "text-[10px] text-cream/90"
+  },
+  {
+   "text": "9:16 master",
+   "size": 10,
+   "r": 1,
+   "cls": "text-[10px] text-cream/90"
+  },
+  {
+   "text": "one month, planned",
+   "size": 10,
+   "r": 1,
+   "cls": "text-[10px] text-cream/90"
+  },
+  {
+   "text": "identity, one sheet",
+   "size": 10,
+   "r": 1,
+   "cls": "text-[10px] text-cream/90"
+  }
+ ],
+ "lowCount": 6,
+ "focus": [
+  {
+   "tag": "button",
+   "name": "Open work menu",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "Desi Draft home",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "All Work6",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "Video & Motion1",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "Social Media1",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "Scripts & Storytelling1",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "Websites & Digital2",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "Branding & Graphic Design1",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "flora alchemy — Websites & D",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "desi draft dot com — Website",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "cut to the beat — Video & Mo",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "always on — Social Media cas",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "hook, turn, payoff — Scripts",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "the studio identity — Brandi",
+   "ring": true
+  }
+ ]
+}
+{
+ "route": "/work/floral-alchemy",
+ "imgs": 24,
+ "noAlt": 0,
+ "h1": 1,
+ "skips": 0,
+ "unnamed": 0,
+ "low": [
+  {
+   "text": "work",
+   "size": 15,
+   "r": 1.2,
+   "cls": "text-[15px] text-white"
+  },
+  {
+   "text": "flora-alchemyy.vercel.app",
+   "size": 10,
+   "r": 1,
+   "cls": "text-[10px] text-cream/90"
+  }
+ ],
+ "lowCount": 2,
+ "focus": [
+  {
+   "tag": "button",
+   "name": "Open work menu",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "Desi Draft home",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "← all work",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "Websites & Digital",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "Visit Live Website(opens in ",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "Visit Live Website(opens in ",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "desi draft dot com →",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "all our work →",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "experienced account manager",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "start a project",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "Instagram",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "credits",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "Open work menu",
+   "ring": true
+  }
+ ]
+}
+{
+ "route": "/work/studio-identity",
+ "imgs": 6,
+ "noAlt": 0,
+ "h1": 1,
+ "skips": 0,
+ "unnamed": 0,
+ "low": [
+  {
+   "text": "work",
+   "size": 15,
+   "r": 1.2,
+   "cls": "text-[15px] text-white"
+  },
+  {
+   "text": "Branding & Graphic Design",
+   "size": 10,
+   "r": 4.17,
+   "cls": "text-[10px]"
+  },
+  {
+   "text": "identity, one sheet",
+   "size": 10,
+   "r": 1,
+   "cls": "text-[10px] text-cream/90"
+  }
+ ],
+ "lowCount": 3,
+ "focus": [
+  {
+   "tag": "button",
+   "name": "Open work menu",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "Desi Draft home",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "← all work",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "Branding & Graphic Design",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "start a conversation",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "flora alchemy →",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "all our work →",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "experienced account manager",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "start a project",
+   "ring": true
+  },
+  {
+   "tag": "a",
+   "name": "Instagram",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "credits",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "Open work menu",
+   "ring": true
+  },
+  {
+   "tag": "button",
+   "name": "Desi Draft home",
+   "ring": true
+  }
+ ]
+}

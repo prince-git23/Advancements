@@ -15,7 +15,3 @@ export type StickerKey =
   | 'hi'
   | 'joinClub'
   | 'cool';
-
-export type PillColor = 'lilac' | 'lime' | 'tangerine' | 'periwinkle' | 'berry';
-
-export type WorkType = '360' | 'social' | 'activation' | 'design';

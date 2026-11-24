@@ -1,0 +1,1078 @@
+/**
+ * Selected Work — stack cards.
+ *
+ * One card = media (≈61%) + project information (≈39%). The media column is
+ * dark so product photography and a 9:16 film sit on the same surface; the
+ * information column stays cream to match the page.
+ */
+
+.sw-section {
+  position: relative;
+  padding-block: clamp(72px, 9vh, 112px) clamp(56px, 8vh, 120px);
+  /* Deliberately no overflow here — the stack's sticky slots need the window. */
+}
+
+.sw-shell {
+  width: 100%;
+  max-width: 1680px;
+  margin-inline: auto;
+  padding-inline: clamp(18px, 4.5vw, 40px);
+}
+
+@media (min-width: 1024px) {
+  .sw-shell {
+    width: 88vw;
+    padding-inline: 0;
+  }
+
+  .sw-stack-wrap {
+    width: 88vw;
+    max-width: 1680px;
+  }
+}
+
+.sw-head {
+  display: grid;
+  gap: 18px;
+  border-top: 1px solid rgb(10 10 10 / 0.2);
+  padding-top: 18px;
+  margin-bottom: clamp(24px, 3.4vh, 44px);
+}
+
+.sw-head h2 {
+  max-width: 15ch;
+}
+
+.sw-head__aside {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+}
+
+.sw-head__aside p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgb(10 10 10 / 0.62);
+  max-width: 30ch;
+}
+
+@media (min-width: 768px) {
+  .sw-head {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    align-items: end;
+    gap: 32px;
+    margin-bottom: clamp(32px, 5vh, 64px);
+  }
+
+  .sw-head__aside {
+    justify-content: flex-end;
+    text-align: right;
+  }
+}
+
+/* ---------------------------------------------------------------- cards */
+
+.sw-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  height: clamp(500px, 66vh, 660px);
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgb(10 10 10 / 0.16);
+  background: #f7f3ea;
+  box-shadow: 0 28px 56px -34px rgb(0 0 0 / 0.5);
+}
+
+.sw-media {
+  position: relative;
+  overflow: hidden;
+  background: #14110e;
+  min-width: 0;
+}
+
+.sw-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sw-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: clamp(22px, 2.4vw, 40px);
+}
+
+.sw-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sw-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11.5px;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(10 10 10 / 0.6);
+}
+
+.sw-rule {
+  width: 18px;
+  height: 1px;
+  background: rgb(10 10 10 / 0.28);
+}
+
+.sw-title {
+  margin-top: clamp(14px, 2.4vh, 26px);
+  font-size: clamp(2rem, 3.1vw, 3.15rem);
+  line-height: 0.96;
+  letter-spacing: -0.01em;
+}
+
+.sw-line {
+  margin-top: 14px;
+  max-width: 34ch;
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.45;
+  color: rgb(10 10 10 / 0.72);
+}
+
+.sw-details {
+  margin-top: 18px;
+  display: grid;
+  gap: 5px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: rgb(10 10 10 / 0.58);
+}
+
+.sw-details li {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr);
+  gap: 6px;
+}
+
+.sw-details li::before {
+  content: '';
+  width: 8px;
+  height: 1px;
+  margin-top: 8px;
+  background: rgb(10 10 10 / 0.35);
+}
+
+.sw-foot {
+  margin-top: clamp(24px, 4.2vh, 46px);
+  padding-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 16px;
+}
+
+.sw-cta {
+  gap: 8px;
+}
+
+.sw-proof {
+  font-size: 10.5px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgb(10 10 10 / 0.45);
+}
+
+/* ------------------------------------------------------------- media art */
+
+.sw-badge {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+  border-radius: 999px;
+  background: rgb(10 10 10 / 0.55);
+  color: rgb(250 247 240 / 0.9);
+  padding: 5px 10px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  backdrop-filter: blur(3px);
+  max-width: calc(100% - 76px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* The phone shows the real phone page. */
+.sw-media .sw-flora-shot {
+  position: absolute;
+  right: clamp(14px, 2.6vw, 30px);
+  bottom: clamp(14px, 2.6vw, 30px);
+  width: 23%;
+  max-width: 152px;
+  height: auto;
+  border-radius: 12px;
+  border: 4px solid #0a0a0a;
+  background: #0a0a0a;
+  box-shadow: 0 22px 40px -18px rgb(0 0 0 / 0.5);
+}
+
+.sw-film {
+  position: absolute;
+  inset: 0;
+}
+
+.sw-film__video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.sw-film--contain .sw-film__video {
+  position: relative;
+  z-index: 1;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* Storefront composition: the desktop capture at its own 16:10 ratio, with the
+   real phone capture overlapping it. Nothing is cropped mid-word. */
+.sw-flora {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  background: #efe9dd;
+  padding: clamp(16px, 3vw, 30px);
+}
+
+.sw-flora__screen {
+  position: relative;
+  width: 87%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgb(10 10 10 / 0.14);
+  box-shadow: 0 18px 36px -22px rgb(0 0 0 / 0.45);
+}
+
+.sw-flora__screen .sw-film {
+  inset: 0;
+}
+
+/* The phone occupies the media's bottom-right corner, so the recording's
+   control sits on the screen itself rather than under the phone. */
+.sw-flora .sw-film__btn {
+  right: auto;
+  left: 14px;
+  bottom: 14px;
+  width: 40px;
+  height: 40px;
+}
+
+
+/* The 9:16 frame keeps its ratio; the poster fills the rest of the column
+   instead of leaving two flat black bars. */
+.sw-film__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(16px) brightness(0.34) saturate(0.85);
+  transform: scale(1.06);
+}
+
+.sw-film__btn {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgb(250 247 240 / 0.45);
+  background: rgb(10 10 10 / 0.5);
+  color: #faf7f0;
+  backdrop-filter: blur(3px);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.sw-film__btn:hover {
+  background: rgb(10 10 10 / 0.72);
+}
+
+.sw-film__btn:focus-visible {
+  outline: 2px solid #faf7f0;
+  outline-offset: 3px;
+}
+
+.sw-film-meta {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  z-index: 2;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(250 247 240 / 0.72);
+}
+
+/* 12-post system */
+.sw-feed {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  height: 100%;
+  /* Room for the concept label, so it never sits on a tile's copy. */
+  padding: 8px 8px 40px;
+}
+
+.sw-feed li {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  min-height: 0;
+}
+
+.sw-feed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Every tile is a designed post, never a flat colour swatch. */
+.sw-post {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  color: #0a0a0a;
+}
+
+.sw-post__kicker {
+  font-size: 7.5px;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.66;
+}
+
+.sw-post__line {
+  margin-top: auto;
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(9px, 0.82vw, 13px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.sw-post__mark {
+  margin-top: 7px;
+  font-family: 'Yellowtail', cursive;
+  font-size: clamp(8px, 0.72vw, 11px);
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.sw-feed li[data-kind='photo'] .sw-post {
+  color: #faf7f0;
+  background: linear-gradient(
+    to top,
+    rgb(10 10 10 / 0.78) 0%,
+    rgb(10 10 10 / 0.22) 46%,
+    rgb(10 10 10 / 0) 72%
+  );
+}
+
+.sw-feed li[data-kind='photo'] .sw-post__kicker {
+  opacity: 0.8;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 0.5);
+}
+
+/* three-beat storyboard */
+.sw-frames {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: center;
+  gap: 12px;
+  height: 100%;
+  padding: 18px;
+}
+
+.sw-frames figure {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+/* Native 9:16, never cropped to the card's landscape panel. */
+.sw-frames img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+}
+
+.sw-frames figcaption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+  color: rgb(250 247 240 / 0.62);
+  white-space: nowrap;
+}
+
+.sw-frame__beat {
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #faf7f0;
+}
+
+.sw-frame__time {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+/* identity board */
+.sw-board {
+  position: absolute;
+  inset: 0;
+  background: #ece6da;
+  padding: clamp(16px, 2.4vw, 34px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sw-board__mark {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  color: #0a0a0a;
+}
+
+.sw-board__mark > svg {
+  width: min(74%, 620px);
+}
+
+.sw-board__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.86fr);
+  gap: 14px;
+}
+
+.sw-board__palette {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding-bottom: 8px;
+}
+
+.sw-board__palette li {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid rgb(10 10 10 / 0.12);
+}
+
+.sw-media .sw-board__stickers {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.sw-media .sw-board__site {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 16 / 10;
+  align-self: center;
+  object-fit: cover;
+  object-position: left top;
+  border-radius: 6px;
+  border: 1px solid rgb(10 10 10 / 0.14);
+  box-shadow: 0 14px 28px -18px rgb(0 0 0 / 0.45);
+}
+
+/* -------------------------------------------------------- static / mobile */
+
+.sw-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 26px;
+}
+
+.sw-card--static {
+  grid-template-columns: 1fr;
+  height: auto;
+}
+
+.sw-card--static .sw-media {
+  aspect-ratio: 4 / 3;
+}
+
+  .sw-card--static .sw-body {
+    padding: 20px;
+  }
+
+  .sw-card--static .sw-media {
+    overflow: hidden;
+  }
+
+.sw-card--static .sw-title {
+  margin-top: 14px;
+  font-size: clamp(1.9rem, 7vw, 2.6rem);
+}
+
+.sw-card--static .sw-foot {
+  padding-top: 18px;
+}
+
+
+.sw-tail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: clamp(32px, 5vh, 56px);
+  border-top: 1px solid rgb(10 10 10 / 0.15);
+  padding-top: 20px;
+}
+
+.sw-tail p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgb(10 10 10 / 0.6);
+  max-width: 46ch;
+}
+
+@media (min-width: 640px) {
+  .sw-tail {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1023px) {
+  .sw-stack-wrap {
+    padding-top: 0;
+  }
+
+  .sw-flora {
+    display: none;
+  }
+
+  .sw-card--static:has(.sw-flora-shot) .sw-media {
+    aspect-ratio: auto;
+    height: min(74vh, 640px);
+  }
+
+  .sw-media .sw-flora-shot {
+    inset: 0;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    border: 0;
+    border-radius: 0;
+    object-fit: cover;
+    object-position: top center;
+    box-shadow: none;
+    background: #efe9dd;
+  }
+}
+
+@media (max-width: 639px) {
+  .sw-card--static:has(.sw-flora-shot) .sw-media {
+    height: min(80vh, 660px);
+  }
+
+  .sw-media .sw-flora-shot {
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 639px) {
+  .sw-card--static .sw-meta {
+    gap: 10px;
+  }
+
+  .sw-card--static .sw-proof {
+    font-size: 10px;
+  }
+
+  /* Phones get readable cards, not 80px tiles: the twelve-post system stays
+     complete and each row can be swiped natively, like a feed. */
+  .sw-feed {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .sw-feed::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sw-feed li {
+    flex: 0 0 58%;
+    aspect-ratio: 4 / 5;
+    align-self: center;
+    scroll-snap-align: start;
+  }
+
+  .sw-post {
+    padding: 10px;
+  }
+
+  .sw-post__kicker {
+    font-size: 8px;
+  }
+
+  .sw-post__line {
+    font-size: 12px;
+  }
+
+  .sw-post__mark {
+    font-size: 9px;
+  }
+
+  .sw-card--static:has(.sw-frames) .sw-media {
+    aspect-ratio: 4 / 5;
+  }
+
+  .sw-frames {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .sw-frames::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sw-frames figure {
+    flex: 0 0 62%;
+    scroll-snap-align: start;
+  }
+
+  .sw-frame__beat {
+    font-size: 10px;
+  }
+
+  .sw-frame__time {
+    font-size: 8.5px;
+  }
+
+  .sw-cut {
+    grid-template-columns: 1fr;
+  }
+
+  .sw-cut__beats {
+    display: none;
+  }
+}
+
+/* Only the front card's media drifts; nothing plays or moves in the back. */
+.sw-card[data-active='true'] .sw-media > img,
+.sw-card[data-active='true'] .sw-film__video {
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Film geometry: the 9:16 master keeps its ratio, and three real frames fill
+   the column beside it instead of two dead bars. */
+.sw-cut {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.62fr) minmax(0, 1fr);
+  background: #14110e;
+}
+
+.sw-cut__film {
+  position: relative;
+  overflow: hidden;
+}
+
+.sw-cut__beats {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  border-left: 1px solid rgb(250 247 240 / 0.14);
+  background: #14110e;
+  padding: 8px 14px;
+}
+
+.sw-cut__beats li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  min-height: 0;
+  padding-block: 8px;
+  border-top: 1px solid rgb(250 247 240 / 0.14);
+}
+
+.sw-cut__beats li:first-child {
+  border-top: 0;
+}
+
+.sw-media .sw-cut__beats img {
+  width: auto;
+  height: 100%;
+  max-height: 150px;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.sw-cut__beat {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sw-cut__time {
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(250 247 240 / 0.5);
+}
+
+.sw-cut__title {
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #faf7f0;
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 1024px) {
+  .sw-card--static .sw-media {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Only the front card shows its label: the covered deck stays clean. */
+.scroll-stack .sw-card[data-active='false'] .sw-badge,
+.scroll-stack .sw-card[data-active='false'] .sw-film-meta {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sw-film__btn,
+  .sw-card[data-active='true'] .sw-media > img,
+  .sw-card[data-active='true'] .sw-film__video {
+    transition: none !important;
+  }
+}
+
+/* Final phone pass: these sit after the desktop rules so they win. */
+@media (max-width: 639px) {
+  .sw-cut {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sw-cut__beats {
+    display: none;
+  }
+
+  .sw-card:has(.sw-feed) .sw-badge {
+    display: none;
+  }
+
+  .sw-feed {
+    padding: 8px;
+  }
+}
+
+.sw-board__type {
+  margin-top: 10px;
+  font-size: clamp(9px, 0.75vw, 11px);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgb(10 10 10 / 0.5);
+}
+
+/* Phones: the twelve posts and three frames stop being a clipped rail and
+   become full, readable content in natural vertical flow. */
+@media (max-width: 639px) {
+  .sw-media .sw-badge {
+    top: auto;
+    right: auto;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .sw-card--static:has(.sw-feed) .sw-media,
+  .sw-card--static:has(.sw-frames) .sw-media {
+    aspect-ratio: auto;
+    height: auto;
+  }
+
+  .sw-card--static:has(.sw-feed) .sw-feed {
+    position: static;
+    height: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: auto;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .sw-feed li {
+    flex: none;
+    aspect-ratio: 4 / 5;
+  }
+
+  .sw-card--static:has(.sw-frames) .sw-frames {
+    position: static;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .sw-frames figure {
+    width: 74%;
+    margin-inline: auto;
+    flex: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .sw-card--static:has(.sw-feed) .sw-feed {
+    display: grid;
+  }
+
+  .sw-card--static:has(.sw-board) .sw-media {
+    aspect-ratio: auto;
+    height: auto;
+  }
+
+  .sw-board {
+    position: static;
+    height: auto;
+    padding: 18px;
+    gap: 16px;
+  }
+
+  .sw-board__mark {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sw-board__mark > svg {
+    width: min(100%, 320px);
+  }
+
+  .sw-board__palette {
+    margin-left: 0;
+    padding-bottom: 0;
+    gap: 7px;
+  }
+
+  .sw-board__palette li {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sw-board__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .sw-media .sw-board__stickers {
+    height: auto;
+    object-position: center;
+  }
+
+  .sw-card:has(.sw-board) .sw-badge {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Phone stack: one card per screen.
+ *
+ * A pinned card cannot be taller than the screen, so the phone card is a
+ * bounded panel (media above, information below) and the long media sets —
+ * twelve posts, three storyboard frames — swipe horizontally inside that
+ * panel instead of stretching the card past the viewport.
+ * ------------------------------------------------------------------ */
+
+@media (max-width: 639px) {
+  .scroll-stack .sw-card {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+    height: calc(100svh - 150px);
+    min-height: 430px;
+    max-height: 700px;
+    border-radius: 16px;
+  }
+
+  .scroll-stack .sw-media {
+    min-height: 0;
+  }
+
+  .scroll-stack .sw-body {
+    justify-content: flex-start;
+    padding: 14px 16px 16px;
+  }
+
+  .scroll-stack .sw-title {
+    margin-top: 8px;
+    font-size: clamp(1.5rem, 7.2vw, 1.95rem);
+  }
+
+  .scroll-stack .sw-line {
+    margin-top: 7px;
+    max-width: none;
+    font-size: 13.5px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .scroll-stack .sw-details {
+    display: none;
+  }
+
+  .scroll-stack .sw-foot {
+    margin-top: 12px;
+    gap: 8px 12px;
+  }
+
+  .scroll-stack .sw-proof {
+    font-size: 9.5px;
+  }
+
+  .scroll-stack .sw-badge {
+    display: none;
+  }
+
+  /* the month grid and the storyboard become native swipe rails */
+  .scroll-stack .sw-feed,
+  .scroll-stack .sw-frames {
+    display: flex;
+    height: 100%;
+    gap: 8px;
+    padding: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scroll-stack .sw-feed::-webkit-scrollbar,
+  .scroll-stack .sw-frames::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll-stack .sw-feed li {
+    flex: 0 0 auto;
+    height: 100%;
+    aspect-ratio: 4 / 5;
+    scroll-snap-align: start;
+  }
+
+  .scroll-stack .sw-frames figure {
+    flex: 0 0 auto;
+    width: 46%;
+    height: auto;
+    align-self: center;
+    margin: 0;
+    gap: 6px;
+    scroll-snap-align: start;
+  }
+
+  .scroll-stack .sw-frames img {
+    flex: none;
+    width: 100%;
+    height: auto;
+    margin-inline: 0;
+    aspect-ratio: 9 / 16;
+  }
+
+  /* the identity board keeps its own layer and drops the second image */
+  .scroll-stack .sw-board {
+    position: absolute;
+    inset: 0;
+    height: auto;
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .scroll-stack .sw-board__mark {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .scroll-stack .sw-board__mark > svg {
+    width: min(68%, 210px);
+  }
+
+  .scroll-stack .sw-board__palette {
+    margin-left: 0;
+    padding-bottom: 0;
+  }
+
+  .scroll-stack .sw-board__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .scroll-stack .sw-media .sw-board__stickers {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .scroll-stack .sw-media .sw-board__site,
+  .scroll-stack .sw-board__type {
+    display: none;
+  }
+}

@@ -1,0 +1,5411 @@
+{
+  "project": "Desi Draft",
+  "url": "http://127.0.0.1:4174/",
+  "capturedAt": "2026-11-18T18:11:46.718Z",
+  "engine": "156.0.8078.4",
+  "note": "Scroll positions are fraction-of-section progress, written through the dev helper __ddScrollTo so ScrollTrigger settles before each shot.",
+  "viewports": {
+    "desktop-1440x900": {
+      "width": 1440,
+      "height": 900,
+      "sections": [
+        {
+          "id": "hero",
+          "top": 0,
+          "height": 1575,
+          "sectionHeight": 900,
+          "range": 675,
+          "pinned": true
+        },
+        {
+          "id": "intro",
+          "top": 900,
+          "height": 3600,
+          "sectionHeight": 900,
+          "range": 2700,
+          "pinned": true
+        },
+        {
+          "id": "manifesto",
+          "top": 3600,
+          "height": 1013,
+          "sectionHeight": 1013,
+          "range": 113,
+          "pinned": false
+        },
+        {
+          "id": "work",
+          "top": 4613,
+          "height": 2768,
+          "sectionHeight": 2768,
+          "range": 1868,
+          "pinned": false
+        },
+        {
+          "id": "team",
+          "top": 7382,
+          "height": 1788,
+          "sectionHeight": 1788,
+          "range": 888,
+          "pinned": false
+        },
+        {
+          "id": "services",
+          "top": 9170,
+          "height": 1338,
+          "sectionHeight": 1338,
+          "range": 438,
+          "pinned": false
+        },
+        {
+          "id": "footer",
+          "top": 10508,
+          "height": 912,
+          "sectionHeight": 912,
+          "range": 12,
+          "pinned": false
+        }
+      ]
+    },
+    "mobile-390x844": {
+      "width": 390,
+      "height": 844,
+      "sections": [
+        {
+          "id": "hero",
+          "top": 0,
+          "height": 1477,
+          "sectionHeight": 844,
+          "range": 633,
+          "pinned": true
+        },
+        {
+          "id": "intro",
+          "top": 844,
+          "height": 3376,
+          "sectionHeight": 844,
+          "range": 2532,
+          "pinned": true
+        },
+        {
+          "id": "manifesto",
+          "top": 3376,
+          "height": 699,
+          "sectionHeight": 699,
+          "range": 0,
+          "pinned": false
+        },
+        {
+          "id": "work",
+          "top": 4075,
+          "height": 2992,
+          "sectionHeight": 2992,
+          "range": 2148,
+          "pinned": false
+        },
+        {
+          "id": "team",
+          "top": 7067,
+          "height": 4149,
+          "sectionHeight": 4149,
+          "range": 3305,
+          "pinned": false
+        },
+        {
+          "id": "services",
+          "top": 11216,
+          "height": 2218,
+          "sectionHeight": 2218,
+          "range": 1374,
+          "pinned": false
+        },
+        {
+          "id": "footer",
+          "top": 13434,
+          "height": 856,
+          "sectionHeight": 856,
+          "range": 12,
+          "pinned": false
+        }
+      ]
+    }
+  },
+  "frames": [
+    {
+      "file": "frames/desktop/001-preloader-030.png",
+      "viewport": "desktop-1440x900",
+      "section": "preloader",
+      "progress": 0.3,
+      "note": "Preloader. Counter and wordmark while the site warms up.",
+      "metrics": {
+        "scrollY": 0,
+        "canvases": 1,
+        "nodes": 913,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 103.845)",
+            "matrix(1, 0, 0, 1, 0, 103.845)"
+          ],
+          "fade": 0,
+          "shellHeight": 876
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/002-preloader-080.png",
+      "viewport": "desktop-1440x900",
+      "section": "preloader",
+      "progress": 0.8,
+      "note": "Preloader leaving. Wipe reveals the hero underneath.",
+      "metrics": {
+        "scrollY": 0,
+        "canvases": 1,
+        "nodes": 913,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 103.845)",
+            "matrix(1, 0, 0, 1, 0, 103.845)"
+          ],
+          "fade": 0,
+          "shellHeight": 876
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/003-hero-entrance-007.png",
+      "viewport": "desktop-1440x900",
+      "section": "hero-entrance",
+      "progress": 0.07,
+      "note": "Hero entrance t≈0.14s — words still inside their masks.",
+      "atMs": 140,
+      "metrics": {
+        "scrollY": 0,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0.431606)",
+            "matrix(1, 0, 0, 1, 0, 0.985971)"
+          ],
+          "fade": 0,
+          "shellHeight": 876
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/004-hero-entrance-026.png",
+      "viewport": "desktop-1440x900",
+      "section": "hero-entrance",
+      "progress": 0.26,
+      "note": "Hero entrance t≈0.52s — first words rising, stagger visible.",
+      "atMs": 520,
+      "metrics": {
+        "scrollY": 0,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 0,
+          "shellHeight": 876
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/005-hero-entrance-049.png",
+      "viewport": "desktop-1440x900",
+      "section": "hero-entrance",
+      "progress": 0.49,
+      "note": "Hero entrance t≈0.98s — ellipse/underline drawing, sticker popping.",
+      "atMs": 980,
+      "metrics": {
+        "scrollY": 0,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 876
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/006-hero-entrance-085.png",
+      "viewport": "desktop-1440x900",
+      "section": "hero-entrance",
+      "progress": 0.85,
+      "note": "Hero settled. Full headline, sound toggle, reel controls visible.",
+      "atMs": 1700,
+      "metrics": {
+        "scrollY": 0,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 876
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/007-hero-000.png",
+      "viewport": "desktop-1440x900",
+      "section": "hero",
+      "progress": 0,
+      "note": "Hero. Words rise from their masks, the ellipse and underline draw, sticker pops. — shutter closed, headline at rest",
+      "metrics": {
+        "scrollY": 0,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 876
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/008-hero-035.png",
+      "viewport": "desktop-1440x900",
+      "section": "hero",
+      "progress": 0.35,
+      "note": "Hero. Words rise from their masks, the ellipse and underline draw, sticker pops. — shutter opening",
+      "metrics": {
+        "scrollY": 236,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 570
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/009-hero-070.png",
+      "viewport": "desktop-1440x900",
+      "section": "hero",
+      "progress": 0.7,
+      "note": "Hero. Words rise from their masks, the ellipse and underline draw, sticker pops. — headline lifting away",
+      "metrics": {
+        "scrollY": 473,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 262
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/010-hero-100.png",
+      "viewport": "desktop-1440x900",
+      "section": "hero",
+      "progress": 1,
+      "note": "Hero. Words rise from their masks, the ellipse and underline draw, sticker pops. — hero fully collapsed into the next section",
+      "metrics": {
+        "scrollY": 675,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/011-intro-000.png",
+      "viewport": "desktop-1440x900",
+      "section": "intro",
+      "progress": 0,
+      "note": "Intro. Giant sentence travels right-to-left, letters scatter in 3D, stickers drift. — sentence entering from the right",
+      "metrics": {
+        "scrollY": 900,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/012-intro-020.png",
+      "viewport": "desktop-1440x900",
+      "section": "intro",
+      "progress": 0.2,
+      "note": "Intro. Giant sentence travels right-to-left, letters scatter in 3D, stickers drift. — middle of the travel",
+      "metrics": {
+        "scrollY": 1440,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/013-intro-040.png",
+      "viewport": "desktop-1440x900",
+      "section": "intro",
+      "progress": 0.4,
+      "note": "Intro. Giant sentence travels right-to-left, letters scatter in 3D, stickers drift. — sentence centre-screen",
+      "metrics": {
+        "scrollY": 1980,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/014-intro-060.png",
+      "viewport": "desktop-1440x900",
+      "section": "intro",
+      "progress": 0.6,
+      "note": "Intro. Giant sentence travels right-to-left, letters scatter in 3D, stickers drift. — letters scattering",
+      "metrics": {
+        "scrollY": 2520,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/015-intro-080.png",
+      "viewport": "desktop-1440x900",
+      "section": "intro",
+      "progress": 0.8,
+      "note": "Intro. Giant sentence travels right-to-left, letters scatter in 3D, stickers drift. — copy fading out",
+      "metrics": {
+        "scrollY": 3060,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/016-intro-100.png",
+      "viewport": "desktop-1440x900",
+      "section": "intro",
+      "progress": 1,
+      "note": "Intro. Giant sentence travels right-to-left, letters scatter in 3D, stickers drift. — hand-off to manifesto",
+      "metrics": {
+        "scrollY": 3600,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/017-manifesto-000.png",
+      "viewport": "desktop-1440x900",
+      "section": "manifesto",
+      "progress": 0,
+      "note": "Manifesto. Heading lines rise, the portrait fan lands and parallaxes on scroll. — heading lines rising in",
+      "metrics": {
+        "scrollY": 3600,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/018-manifesto-033.png",
+      "viewport": "desktop-1440x900",
+      "section": "manifesto",
+      "progress": 0.33,
+      "note": "Manifesto. Heading lines rise, the portrait fan lands and parallaxes on scroll. — fan landed, parallax engaged",
+      "metrics": {
+        "scrollY": 3637,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/019-manifesto-066.png",
+      "viewport": "desktop-1440x900",
+      "section": "manifesto",
+      "progress": 0.66,
+      "note": "Manifesto. Heading lines rise, the portrait fan lands and parallaxes on scroll. — fan at mid-parallax",
+      "metrics": {
+        "scrollY": 3675,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/020-manifesto-100.png",
+      "viewport": "desktop-1440x900",
+      "section": "manifesto",
+      "progress": 1,
+      "note": "Manifesto. Heading lines rise, the portrait fan lands and parallaxes on scroll. — copy revealed",
+      "metrics": {
+        "scrollY": 3713,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/021-work-000.png",
+      "viewport": "desktop-1440x900",
+      "section": "work",
+      "progress": 0,
+      "note": "Work. Floral Alchemy feature, then three disciplines in their own layouts; no carousel, no pin. — dark panel wiping up",
+      "metrics": {
+        "scrollY": 4613,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/022-work-050.png",
+      "viewport": "desktop-1440x900",
+      "section": "work",
+      "progress": 0.5,
+      "note": "Work. Floral Alchemy feature, then three disciplines in their own layouts; no carousel, no pin. — cards fanned, meta in",
+      "metrics": {
+        "scrollY": 5547,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/023-work-100.png",
+      "viewport": "desktop-1440x900",
+      "section": "work",
+      "progress": 1,
+      "note": "Work. Floral Alchemy feature, then three disciplines in their own layouts; no carousel, no pin. — section leaving, panel full height",
+      "metrics": {
+        "scrollY": 6481,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/024-team-000.png",
+      "viewport": "desktop-1440x900",
+      "section": "team",
+      "progress": 0,
+      "note": "Team. Six ProfileCards on a normal-height 3/2/1 grid; no pin, no WebGL. — heading and first cards entering (staggered, once)",
+      "metrics": {
+        "scrollY": 7382,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/025-team-050.png",
+      "viewport": "desktop-1440x900",
+      "section": "team",
+      "progress": 0.5,
+      "note": "Team. Six ProfileCards on a normal-height 3/2/1 grid; no pin, no WebGL. — all six profile cards on the grid, no pin",
+      "metrics": {
+        "scrollY": 7826,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/026-team-100.png",
+      "viewport": "desktop-1440x900",
+      "section": "team",
+      "progress": 1,
+      "note": "Team. Six ProfileCards on a normal-height 3/2/1 grid; no pin, no WebGL. — section leaving; cards stay mounted and visible",
+      "metrics": {
+        "scrollY": 8270,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/027-services-000.png",
+      "viewport": "desktop-1440x900",
+      "section": "services",
+      "progress": 0,
+      "note": "Services. Five-row ledger; heading rises, rows stagger, hover slides the colour wash in. — heading masked, cards below",
+      "metrics": {
+        "scrollY": 9170,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/028-services-050.png",
+      "viewport": "desktop-1440x900",
+      "section": "services",
+      "progress": 0.5,
+      "note": "Services. Five-row ledger; heading rises, rows stagger, hover slides the colour wash in. — cards fanned in",
+      "metrics": {
+        "scrollY": 9389,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/029-services-100.png",
+      "viewport": "desktop-1440x900",
+      "section": "services",
+      "progress": 1,
+      "note": "Services. Five-row ledger; heading rises, rows stagger, hover slides the colour wash in. — section leaving",
+      "metrics": {
+        "scrollY": 9608,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/030-footer-000.png",
+      "viewport": "desktop-1440x900",
+      "section": "footer",
+      "progress": 0,
+      "note": "Footer. Matter.js stickers drop into their slots and settle. — footer entering, stickers not dropped",
+      "metrics": {
+        "scrollY": 10508,
+        "canvases": 1,
+        "nodes": 906,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "running",
+          "canvas": [
+            1416,
+            900
+          ],
+          "opacities": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "matrix(0.999758, -0.0219982, 0.0219982, 0.999758, 77.4, 89.9)",
+            "matrix(0.998079, 0.0619603, -0.0619603, 0.998079, 239.9, -125.1)",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/031-footer-050.png",
+      "viewport": "desktop-1440x900",
+      "section": "footer",
+      "progress": 0.5,
+      "note": "Footer. Matter.js stickers drop into their slots and settle. — stickers mid-drop",
+      "metrics": {
+        "scrollY": 10514,
+        "canvases": 1,
+        "nodes": 906,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "running",
+          "canvas": [
+            1416,
+            900
+          ],
+          "opacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "matrix(0.999758, -0.0219982, 0.0219982, 0.999758, 77.4, 654.6)",
+            "matrix(0.998079, 0.0619603, -0.0619603, 0.998079, 239.9, 442.8)",
+            "matrix(0.9987, -0.0509779, 0.0509779, 0.9987, 416.4, 117.3)",
+            "matrix(0.999928, -0.0119997, 0.0119997, 0.999928, 613.5, -34.2)",
+            "matrix(0.986907, 0.161292, -0.161292, 0.986907, 790.1, -170.6)",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/032-footer-100.png",
+      "viewport": "desktop-1440x900",
+      "section": "footer",
+      "progress": 1,
+      "note": "Footer. Matter.js stickers drop into their slots and settle. — footer at rest",
+      "metrics": {
+        "scrollY": 10520,
+        "canvases": 1,
+        "nodes": 906,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "running",
+          "canvas": [
+            1416,
+            900
+          ],
+          "opacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "offsets": [
+            "matrix(0.999758, -0.0219982, 0.0219982, 0.999758, 77.4, 656)",
+            "matrix(0.998079, 0.0619603, -0.0619603, 0.998079, 239.8, 545.8)",
+            "matrix(0.9987, -0.0509779, 0.0509779, 0.9987, 416.4, 697.1)",
+            "matrix(0.999928, -0.0119997, 0.0119997, 0.999928, 613.5, 579.1)",
+            "matrix(0.986907, 0.161292, -0.161292, 0.986907, 790.1, 242.3)",
+            "matrix(0.982193, -0.187877, 0.187877, 0.982193, 952.5, -40.5)",
+            "matrix(0.999916, -0.0129996, 0.0129996, 0.999916, 1134.9, -119.4)",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/033-footer-physics-011.png",
+      "viewport": "desktop-1440x900",
+      "section": "footer-physics",
+      "progress": 0.113,
+      "note": "Footer stickers falling (t≈0.45s)",
+      "metrics": {
+        "scrollY": 10468,
+        "canvases": 1,
+        "nodes": 906,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "running",
+          "canvas": [
+            1416,
+            900
+          ],
+          "opacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "offsets": [
+            "matrix(0.999758, -0.0219982, 0.0219982, 0.999758, 77.4, 656)",
+            "matrix(0.998079, 0.0619603, -0.0619603, 0.998079, 239.8, 545.8)",
+            "matrix(0.9987, -0.0509779, 0.0509779, 0.9987, 416.4, 697.8)",
+            "matrix(0.999928, -0.0119997, 0.0119997, 0.999928, 613.5, 581)",
+            "matrix(0.986907, 0.161292, -0.161292, 0.986907, 790.1, 712.8)",
+            "matrix(0.982193, -0.187877, 0.187877, 0.982193, 952.5, 391)",
+            "matrix(0.999916, -0.0129996, 0.0129996, 0.999916, 1134.9, 154.9)",
+            "matrix(0.989935, 0.141523, -0.141523, 0.989935, 1269, -92.4)"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/034-footer-physics-030.png",
+      "viewport": "desktop-1440x900",
+      "section": "footer-physics",
+      "progress": 0.3,
+      "note": "Footer stickers landing (t≈1.2s)",
+      "metrics": {
+        "scrollY": 10468,
+        "canvases": 1,
+        "nodes": 906,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "running",
+          "canvas": [
+            1416,
+            900
+          ],
+          "opacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "offsets": [
+            "matrix(0.999758, -0.0219982, 0.0219982, 0.999758, 77.4, 656)",
+            "matrix(0.998079, 0.0619603, -0.0619603, 0.998079, 239.8, 545.8)",
+            "matrix(0.9987, -0.0509779, 0.0509779, 0.9987, 416.4, 697.8)",
+            "matrix(0.999928, -0.0119997, 0.0119997, 0.999928, 613.5, 581)",
+            "matrix(0.986907, 0.161292, -0.161292, 0.986907, 790.1, 718.5)",
+            "matrix(0.982193, -0.187877, 0.187877, 0.982193, 952.5, 572.7)",
+            "matrix(0.999916, -0.0129996, 0.0129996, 0.999916, 1134.9, 706.9)",
+            "matrix(0.989935, 0.141523, -0.141523, 0.989935, 1281.9, 508.6)"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/035-footer-physics-065.png",
+      "viewport": "desktop-1440x900",
+      "section": "footer-physics",
+      "progress": 0.65,
+      "note": "Footer stickers settled in their slots (t≈2.6s)",
+      "metrics": {
+        "scrollY": 10468,
+        "canvases": 1,
+        "nodes": 906,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "running",
+          "canvas": [
+            1416,
+            900
+          ],
+          "opacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "offsets": [
+            "matrix(0.999758, -0.0219982, 0.0219982, 0.999758, 77.4, 656)",
+            "matrix(0.998079, 0.0619603, -0.0619603, 0.998079, 239.8, 545.8)",
+            "matrix(0.9987, -0.0509779, 0.0509779, 0.9987, 416.4, 697.8)",
+            "matrix(0.999928, -0.0119997, 0.0119997, 0.999928, 613.5, 581)",
+            "matrix(0.986907, 0.161292, -0.161292, 0.986907, 790.1, 718.5)",
+            "matrix(0.982193, -0.187877, 0.187877, 0.982193, 952.5, 572.7)",
+            "matrix(0.999916, -0.0129996, 0.0129996, 0.999916, 1134.9, 706.9)",
+            "matrix(0.989935, 0.141523, -0.141523, 0.989935, 1283.7, 547.5)"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/036-services-hover-045.png",
+      "viewport": "desktop-1440x900",
+      "section": "services-hover",
+      "progress": 0.45,
+      "note": "Services — hovered row fills with its discipline colour, sticker tilts.",
+      "metrics": {
+        "scrollY": 9367,
+        "canvases": 1,
+        "nodes": 906,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            1416,
+            900
+          ],
+          "opacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "offsets": [
+            "matrix(0.999758, -0.0219982, 0.0219982, 0.999758, 77.4, 656)",
+            "matrix(0.998079, 0.0619603, -0.0619603, 0.998079, 239.8, 545.8)",
+            "matrix(0.9987, -0.0509779, 0.0509779, 0.9987, 416.4, 697.8)",
+            "matrix(0.999928, -0.0119997, 0.0119997, 0.999928, 613.5, 581)",
+            "matrix(0.986907, 0.161292, -0.161292, 0.986907, 790.1, 718.5)",
+            "matrix(0.982193, -0.187877, 0.187877, 0.982193, 952.5, 572.7)",
+            "matrix(0.999916, -0.0129996, 0.0129996, 0.999916, 1134.9, 706.9)",
+            "matrix(0.989935, 0.141523, -0.141523, 0.989935, 1283.7, 547.5)"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/037-work-grid-055.png",
+      "viewport": "desktop-1440x900",
+      "section": "work-grid",
+      "progress": 0.55,
+      "note": "Work — featured café plate and the selected grid.",
+      "metrics": {
+        "scrollY": 5640,
+        "canvases": 1,
+        "nodes": 906,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            1416,
+            900
+          ],
+          "opacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "offsets": [
+            "matrix(0.999758, -0.0219982, 0.0219982, 0.999758, 77.4, 656)",
+            "matrix(0.998079, 0.0619603, -0.0619603, 0.998079, 239.8, 545.8)",
+            "matrix(0.9987, -0.0509779, 0.0509779, 0.9987, 416.4, 697.8)",
+            "matrix(0.999928, -0.0119997, 0.0119997, 0.999928, 613.5, 581)",
+            "matrix(0.986907, 0.161292, -0.161292, 0.986907, 790.1, 718.5)",
+            "matrix(0.982193, -0.187877, 0.187877, 0.982193, 952.5, 572.7)",
+            "matrix(0.999916, -0.0129996, 0.0129996, 0.999916, 1134.9, 706.9)",
+            "matrix(0.989935, 0.141523, -0.141523, 0.989935, 1283.7, 547.5)"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/038-work-filter-030.png",
+      "viewport": "desktop-1440x900",
+      "section": "work-filter",
+      "progress": 0.3,
+      "note": "Work index — filtered to Video & Motion; one full-width case study, ?c=video in the URL.",
+      "metrics": {
+        "scrollY": 0,
+        "canvases": 1,
+        "nodes": 228,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [],
+          "fade": null,
+          "shellHeight": null
+        },
+        "team": null,
+        "work": {
+          "cards": 0,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 0,
+          "groups": []
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/039-hero-reduced-000.png",
+      "viewport": "reduced-1440x900",
+      "section": "hero-reduced",
+      "progress": 0,
+      "note": "Reduced motion — headline shown immediately, no mask travel.",
+      "metrics": {
+        "scrollY": 0,
+        "canvases": 1,
+        "nodes": 834,
+        "heapMB": 9.5,
+        "reduced": true,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 876
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": null,
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/desktop/040-team-reduced-000.png",
+      "viewport": "reduced-1440x900",
+      "section": "team-reduced",
+      "progress": 0,
+      "note": "Reduced motion team — all six cards rendered immediately, no stagger or pin.",
+      "metrics": {
+        "scrollY": 4017,
+        "canvases": 1,
+        "nodes": 834,
+        "heapMB": 9.5,
+        "reduced": true,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 876
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 1788,
+          "headingWidth": 1100,
+          "viewportWidth": 1440
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": null,
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/mobile/041-hero-000.png",
+      "viewport": "mobile-390x844",
+      "section": "hero",
+      "progress": 0,
+      "note": "Mobile hero — full-bleed reel, headline stacked.",
+      "metrics": {
+        "scrollY": 0,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 820
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 4149,
+          "headingWidth": 350,
+          "viewportWidth": 390
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/mobile/042-intro-040.png",
+      "viewport": "mobile-390x844",
+      "section": "intro",
+      "progress": 0.4,
+      "note": "Mobile intro — sentence mid-travel.",
+      "metrics": {
+        "scrollY": 1857,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 4149,
+          "headingWidth": 350,
+          "viewportWidth": 390
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/mobile/043-manifesto-040.png",
+      "viewport": "mobile-390x844",
+      "section": "manifesto",
+      "progress": 0.4,
+      "note": "Mobile manifesto — fan compressed.",
+      "metrics": {
+        "scrollY": 3376,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 4149,
+          "headingWidth": 350,
+          "viewportWidth": 390
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/mobile/044-work-030.png",
+      "viewport": "mobile-390x844",
+      "section": "work",
+      "progress": 0.3,
+      "note": "Mobile work — featured plate stacked over its title, selected cards below.",
+      "metrics": {
+        "scrollY": 4719,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 4149,
+          "headingWidth": 350,
+          "viewportWidth": 390
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/mobile/045-team-020.png",
+      "viewport": "mobile-390x844",
+      "section": "team",
+      "progress": 0.2,
+      "note": "Mobile team — single-column profile cards, no lanyard or role pills.",
+      "metrics": {
+        "scrollY": 7728,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0.99
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 4149,
+          "headingWidth": 350,
+          "viewportWidth": 390
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/mobile/046-services-030.png",
+      "viewport": "mobile-390x844",
+      "section": "services",
+      "progress": 0.3,
+      "note": "Mobile services — five stacked ledger rows.",
+      "metrics": {
+        "scrollY": 11628,
+        "canvases": 1,
+        "nodes": 905,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 4149,
+          "headingWidth": 350,
+          "viewportWidth": 390
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "paused",
+          "canvas": [
+            300,
+            150
+          ],
+          "opacities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    },
+    {
+      "file": "frames/mobile/047-footer-040.png",
+      "viewport": "mobile-390x844",
+      "section": "footer",
+      "progress": 0.4,
+      "note": "Mobile footer — four stickers, copy above them.",
+      "metrics": {
+        "scrollY": 13439,
+        "canvases": 1,
+        "nodes": 906,
+        "heapMB": 9.5,
+        "reduced": false,
+        "hero": {
+          "firstWords": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "fade": 1,
+          "shellHeight": 0
+        },
+        "team": {
+          "cards": 6,
+          "cardOpacities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "names": [
+            "aarav",
+            "isha",
+            "kabir",
+            "zoya",
+            "dev",
+            "meera"
+          ],
+          "roles": [
+            "strategy",
+            "social creative",
+            "video + edit",
+            "copy",
+            "community",
+            "design"
+          ],
+          "images": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fallbacks": 6,
+          "contacts": 6,
+          "canvases": 0,
+          "pinned": false,
+          "height": 4149,
+          "headingWidth": 350,
+          "viewportWidth": 390
+        },
+        "work": {
+          "cards": 3,
+          "featured": false,
+          "canvases": 0
+        },
+        "services": {
+          "rows": 5,
+          "groups": [
+            "content production",
+            "creative strategy",
+            "digital experiences",
+            "visual communication",
+            "creative spaces"
+          ]
+        },
+        "footerStickers": 1,
+        "footerPhysics": {
+          "state": "running",
+          "canvas": [
+            366,
+            844
+          ],
+          "opacities": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "offsets": [
+            "matrix(0.993622, 0.11276, -0.11276, 0.993622, -2.1, 83.5)",
+            "none",
+            "matrix(0.991562, 0.129634, -0.129634, 0.991562, 78.9, -149.3)",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+          ]
+        },
+        "media": {
+          "videos": 0,
+          "playing": 0
+        }
+      }
+    }
+  ],
+  "perf": {
+    "note": "Headless Chromium on the capture machine, 1440x900, DPR 1, hardware GPU via ANGLE/D3D11. Trace-measured in a fresh page; not a phone.",
+    "hardware": {
+      "cores": 16,
+      "memory": 16,
+      "dpr": 1
+    },
+    "hero": {
+      "fps": 25.6,
+      "p50": 33.4,
+      "p95": 50.1,
+      "max": 50.1,
+      "frames": 38,
+      "over20ms": 37,
+      "over33ms": 37,
+      "canvases": 1,
+      "canvasArea": 1274400,
+      "gl": "none"
+    },
+    "teamCards": {
+      "fps": 60,
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "frames": 96,
+      "over20ms": 0,
+      "over33ms": 0,
+      "canvases": 1,
+      "canvasArea": 1274400,
+      "gl": "none"
+    },
+    "teamIdle": {
+      "fps": 60,
+      "p50": 16.7,
+      "p95": 16.7,
+      "max": 16.8,
+      "frames": 97,
+      "over20ms": 0,
+      "over33ms": 0,
+      "canvases": 1,
+      "canvasArea": 1274400,
+      "gl": "none"
+    },
+    "teamScroll": {
+      "fps": 60,
+      "p50": 16.7,
+      "p95": 16.7,
+      "max": 16.8,
+      "frames": 132,
+      "over20ms": 0,
+      "over33ms": 0
+    },
+    "services": {
+      "fps": 60,
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "frames": 84,
+      "over20ms": 0,
+      "over33ms": 0,
+      "canvases": 1,
+      "canvasArea": 1274400,
+      "gl": "none"
+    },
+    "footerRest": {
+      "fps": 60,
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "frames": 90,
+      "over20ms": 0,
+      "over33ms": 0,
+      "canvases": 1,
+      "canvasArea": 1274400,
+      "gl": "none"
+    },
+    "resources": {
+      "link": {
+        "n": 2,
+        "kb": 12
+      },
+      "script": {
+        "n": 2,
+        "kb": 78
+      },
+      "other": {
+        "n": 3,
+        "kb": 123
+      },
+      "img": {
+        "n": 2,
+        "kb": 291
+      }
+    },
+    "memory": {
+      "heapMB": 9.5,
+      "domNodes": 906
+    }
+  },
+  "counts": {
+    "total": 47,
+    "desktop": 38,
+    "reduced": 2,
+    "mobile": 7
+  }
+}

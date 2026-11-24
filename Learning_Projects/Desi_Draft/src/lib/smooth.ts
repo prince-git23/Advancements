@@ -6,6 +6,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 export { gsap, ScrollTrigger };
 
+/** Dev-only: jump to a scroll offset and settle ScrollTrigger in the same tick. */
+if (import.meta.env.DEV && typeof window !== 'undefined') {
+  (window as unknown as Record<string, unknown>).__ddScrollTo = (y: number) => {
+    const lenis = (window as unknown as { __lenis?: Lenis }).__lenis;
+    if (lenis) lenis.scrollTo(y, { immediate: true });
+    else window.scrollTo(0, y);
+    ScrollTrigger.update();
+  };
+}
+
 export function scrollToId(id: string) {
   const el = document.getElementById(id);
   if (!el) return;

@@ -1,3 +1,5 @@
+@import './styles/layers.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,6 +15,168 @@
   --lilac: #e8b4f5;
   --lime: #e4fba8;
   --frame: 12px;
+  /* sticker scale: 0.7 under 768px (spec §1.2) */
+  --sticker-scale: 1;
+  /* One page gutter for every section: 16px on a phone, ~30px on a tablet,
+     44px once the 1400px measure is wide enough to afford it. Sections use
+     .dd-page / .dd-pad so a gutter is set in one place, never per component. */
+  --dd-gutter: clamp(1rem, 3vw, 2.75rem);
+}
+
+@layer components {
+  /* Balanced page measure: centred, capped at 1400px, fluid side gutters. */
+  .dd-page {
+    width: 100%;
+    margin-inline: auto;
+    max-width: var(--dd-max, 1400px);
+    padding-inline: var(--dd-gutter);
+  }
+
+  /* Gutters only, for sections that already carry their own max-width. */
+  .dd-pad {
+    padding-inline: var(--dd-gutter);
+  }
+
+  /* Body copy on the cobalt footer. Brand cream measures 4.12:1 there — under
+     AA for text below 24px — so small footer copy uses this warm near-white,
+     which is visually the same family and measures 4.66:1. Headings stay cream. */
+  .footer-text {
+    color: #faf8f4;
+  }
+
+  /* ---- type scale -------------------------------------------------------
+     One ladder for the whole site: hero → section → project → service → body.
+     Every heading picks a rung instead of inventing a clamp, so the hierarchy
+     stays the same on the home page, /work and the case studies. */
+  .type-hero {
+    font-size: clamp(2.6rem, 6.2vw, 6rem);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+  }
+  .type-section {
+    font-size: clamp(2.4rem, 4.4vw, 4.4rem);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+  }
+  .type-project {
+    font-size: clamp(1.9rem, 3.2vw, 3.25rem);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+  }
+  .type-service {
+    font-size: clamp(1.55rem, 2.2vw, 2.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+  }
+  .lede {
+    font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+    line-height: 1.5;
+  }
+
+  /* ---- buttons and links ------------------------------------------------
+     Editorial pills, not SaaS rectangles: a deep ink ground, a 52px target and
+     an arrow that steps on hover. The cream variant covers dark sections. */
+  .btn {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border-radius: 999px;
+    padding: 0.4rem 1.6rem;
+    font-size: 1rem;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-align: center;
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  .btn:active {
+    transform: translateY(0);
+  }
+  .btn:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .btn-primary:hover {
+    background: var(--berry);
+  }
+  .btn-secondary {
+    border: 1px solid rgb(10 10 10 / 0.28);
+    color: var(--ink);
+  }
+  .btn-secondary:hover {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .btn-cream {
+    background: var(--cream);
+    color: var(--ink);
+  }
+  .btn-cream:hover {
+    background: var(--lime);
+  }
+  .btn-cream:focus-visible {
+    outline-color: var(--cream);
+  }
+  .btn-arrow {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn:hover .btn-arrow {
+    transform: translateX(3px);
+  }
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgb(10 10 10 / 0.25);
+    padding-bottom: 0.3rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  .link-arrow:hover {
+    border-color: currentColor;
+  }
+  .link-arrow:hover .btn-arrow {
+    transform: translateX(3px);
+  }
+}
+
+/* ------------------------------------------------------------------ presets
+   Five coordinated applications of the one palette. A section opts in with
+   data-theme and only the chapter rule takes the accent — no surface, type or
+   sticker is repainted, so a preset cannot drift the brand. */
+[data-theme='studio'] {
+  --chapter-accent: var(--tangerine);
+}
+[data-theme='motion'] {
+  --chapter-accent: var(--royal);
+}
+[data-theme='botanical'] {
+  --chapter-accent: var(--forest);
+}
+[data-theme='editorial'] {
+  --chapter-accent: var(--berry);
+}
+[data-theme='digital'] {
+  --chapter-accent: var(--peri);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --sticker-scale: 0.7;
+  }
 }
 
 * {
@@ -260,5 +424,256 @@ button {
   }
   .doodle-path {
     stroke-dashoffset: 0 !important;
+  }
+}
+
+/* ---- manifesto hand-off --------------------------------------------------
+   The section is pulled a full viewport over the pinned intro so no blank
+   spacer shows on desktop. On a phone that pull put the manifesto heading on
+   screen while the travelling sentence was still crossing; with the shorter
+   mobile pin there is nothing to cover, so the two compose one at a time. */
+@media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
+  #manifesto {
+    margin-top: 0;
+  }
+}
+
+/* ---- five pillars: a measured fan ----------------------------------------
+   Card width, step, rotation and the text inset come from PillarsFan's
+   ResizeObserver through --card-w / --text-pad and each card's --dx, --dy,
+   --rot and --sc. Nothing here hard-codes a viewport: the component sizes the
+   fan to the real container, this file owns appearance and the transition. */
+.pillars-stage {
+  position: relative;
+}
+
+.pillars {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.pillar-slot {
+  flex: 0 0 auto;
+}
+
+.pillar {
+  position: relative;
+  z-index: var(--z, 1);
+  display: block;
+  width: var(--card-w, 268px);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  text-align: left;
+  border: 0;
+  border-radius: 10px;
+  background: var(--ink);
+  box-shadow: 0 14px 28px -18px rgba(10, 10, 10, 0.55);
+  transform: translate3d(var(--dx, 0), var(--dy, 0), 0) rotate(var(--rot, 0deg)) scale(var(--sc, 1));
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease;
+}
+
+.pillar-inner {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.pillar-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pillar-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.92) 0%,
+    rgba(10, 10, 10, 0.58) 36%,
+    rgba(10, 10, 10, 0.08) 66%,
+    transparent 100%
+  );
+}
+
+.pillar-text {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 0 var(--text-pad, 58px) 0.9rem;
+}
+
+.pillar-no {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  font-variant-numeric: tabular-nums;
+}
+
+.pillar-rule {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--accent, var(--cream));
+}
+
+.pillar-title {
+  font-size: clamp(0.95rem, calc(var(--card-w, 268px) * 0.085), 1.95rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.pillar-copy {
+  font-size: clamp(0.68rem, calc(var(--card-w, 268px) * 0.05), 0.95rem);
+  line-height: 1.25;
+}
+
+.pillar[data-active='true'] {
+  z-index: 40;
+  box-shadow: 0 26px 48px -22px rgba(10, 10, 10, 0.6);
+}
+
+.pillar[data-active='true'] .pillar-img {
+  transform: scale(1.05);
+}
+
+.pillar:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+/* Phone: the fan becomes a snap strip. The strip owns its horizontal scroll, so
+   vertical page scrolling and Lenis are untouched. */
+.pillars[data-mode='strip'] {
+  justify-content: flex-start;
+  gap: 0.85rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--dd-gutter);
+  padding: 1rem var(--dd-gutter) 0.75rem;
+  margin-inline: calc(var(--dd-gutter) * -1);
+  overscroll-behavior-x: contain;
+}
+
+.pillars[data-mode='strip'] .pillar-slot {
+  scroll-snap-align: start;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pillar,
+  .pillar-img {
+    transition: none;
+  }
+}
+
+/* ---- case-study image rails, phones -------------------------------------
+   These galleries are three or four across on a laptop. On a phone they used
+   to fall to two columns or a full stack, which read as a wall of half-frames.
+   Below 640px each becomes a one-up snap rail: a single image fills the column
+   and the rest are one swipe away, so nothing is cropped in half. The desktop
+   grid classes on the same element take over again at sm. */
+@media (max-width: 639px) {
+  .study-rail {
+    display: flex;
+    gap: 12px;
+    margin-inline: calc(var(--dd-gutter) * -1);
+    padding-inline: var(--dd-gutter);
+    padding-bottom: 4px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    /* Without this the mandatory snap aligns the first card to the padding
+       box and parks the rail 16px in, so the card starts flush to the edge. */
+    scroll-padding-inline: var(--dd-gutter);
+    scrollbar-width: none;
+  }
+
+  .study-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .study-rail > * {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+}
+
+/* ---- hero media panel ----------------------------------------------------
+   Below 1280 px the film is a framed panel above the headline. Its width is
+   capped by the viewport height so the panel and the headline always fit, and
+   the video keeps its own aspect ratio instead of being cropped to fill a box.
+   At 1280 px and up the panel becomes the full-bleed widescreen film. */
+
+/* ---- header ground -------------------------------------------------------
+   The header is fixed over nine sections with two surface colours, so the mark
+   needs a surface of its own. `data-theme` mirrors the section underneath:
+   'light' = cream type over a dark field, 'dark' = ink type over cream. */
+.header-scrim {
+  height: 96px;
+  /* Solid while the mark sits on it, then a short fade. At 94% the display
+     headings still ghosted through the mark — visible in the team capture. */
+  opacity: 1;
+  transition: background 320ms linear;
+}
+/* A tinted, blurred ground rather than a solid bar: over the hero film the
+   old opaque gradient read as a black band across the top of the video. The
+   blur fades out with the tint so nothing is cut off at a hard edge. */
+header[data-theme='light'] .header-scrim {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.6) 0%,
+    rgba(10, 10, 10, 0.42) 58%,
+    rgba(10, 10, 10, 0.22) 80%,
+    rgba(10, 10, 10, 0) 100%
+  );
+  backdrop-filter: blur(14px) saturate(1.1);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 100%);
+}
+header[data-theme='dark'] .header-scrim {
+  background: linear-gradient(
+    to bottom,
+    rgba(238, 234, 227, 0.72) 0%,
+    rgba(238, 234, 227, 0.5) 58%,
+    rgba(238, 234, 227, 0.24) 80%,
+    rgba(238, 234, 227, 0) 100%
+  );
+  backdrop-filter: blur(14px) saturate(1.05);
+  -webkit-backdrop-filter: blur(14px) saturate(1.05);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 100%);
+}
+
+/* On a phone the film fills the top of the screen, and a bright shot under a
+   14px blur turns into a milky smear. A plain cinematic gradient reads better
+   and costs nothing to composite. */
+@media (max-width: 767px) {
+  header[data-theme='light'] .header-scrim,
+  header[data-theme='dark'] .header-scrim {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  header[data-theme='light'] .header-scrim {
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 10, 10, 0.66) 0%,
+      rgba(10, 10, 10, 0.34) 68%,
+      rgba(10, 10, 10, 0) 100%
+    );
+  }
+  header[data-theme='dark'] .header-scrim {
+    background: linear-gradient(
+      to bottom,
+      rgba(238, 234, 227, 0.84) 0%,
+      rgba(238, 234, 227, 0.44) 68%,
+      rgba(238, 234, 227, 0) 100%
+    );
   }
 }

@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 
 export function usePrefersReducedMotion() {
-  const [reduced, setReduced] = useState(false);
+  // Read the preference on the first render: starting at `false` made reduced-
+  // motion trees build their animations for one commit before undoing them.
+  const [reduced, setReduced] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');

@@ -1,157 +1,125 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from '../lib/smooth';
 import { usePrefersReducedMotion } from '../lib/hooks';
+import { media } from '../data/media';
 import { team } from '../data/team';
-import { PlaceholderPortrait } from './Placeholder';
+import { ProfileCard } from './ui/ProfileCard';
+import { openContact } from './ContactDialog';
+import { Chapter } from './ui/Chapter';
 import { Sticker } from './art/Stickers';
-import { CloverBlob, SplatBlob } from './art/Blobs';
-import { LoopArrow, Squiggle, TickMarks } from './art/Doodles';
-import { SZ } from './art/sizes';
 
-function useDesktop() {
-  const [desktop, setDesktop] = useState(true);
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px)');
-    const on = () => setDesktop(mq.matches);
-    on();
-    mq.addEventListener('change', on);
-    return () => mq.removeEventListener('change', on);
-  }, []);
-  return desktop;
-}
+const COUNT_WORD = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
 
+/**
+ * Normal-height, content-driven team section: one ProfileCard per active member
+ * (the studio is three people) on a 3/2/1 column grid. The count and the roles
+ * come from `data/team`, so nothing has to be rewritten when a member changes.
+ */
 export function Team() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const collageRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
   const reduced = usePrefersReducedMotion();
-  const desktop = useDesktop();
+  const count = COUNT_WORD[team.length] ?? String(team.length);
+  const roles = team.map((member) => member.role);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    if (!section || reduced) return;
+    const grid = gridRef.current;
+    if (!grid || reduced) return;
+
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('[data-team-card]'));
+    if (!cards.length) return;
 
     const ctx = gsap.context(() => {
-      gsap.from('.tm-line-inner', {
-        yPercent: 110,
-        duration: 1.1,
-        ease: 'power4.out',
-        stagger: 0.08,
-        scrollTrigger: { trigger: '.tm-heading', start: 'top 85%' },
-      });
-      gsap.from('.tm-blob', {
-        scale: 0.6,
+      gsap.from(cards, {
+        y: 26,
         autoAlpha: 0,
-        duration: 1.2,
+        duration: 0.65,
         ease: 'power3.out',
-        stagger: 0.15,
-        scrollTrigger: { trigger: collageRef.current, start: 'top 80%' },
+        stagger: 0.07,
+        scrollTrigger: { trigger: grid, start: 'top 88%', once: true },
       });
-
-      const photos = gsap.utils.toArray<HTMLElement>('.tm-photo');
-      photos.forEach((el) => {
-        const speed = Number(el.dataset.speed ?? 1);
-        const dist = (speed - 1) * (desktop ? 380 : 160);
-        gsap.fromTo(
-          el,
-          { y: dist * 0.6 },
-          {
-            y: -dist,
-            ease: 'none',
-            scrollTrigger: { trigger: collageRef.current, start: 'top bottom', end: 'bottom top', scrub: true },
-          }
-        );
-      });
-    }, sectionRef.current);
+    }, grid);
 
     return () => ctx.revert();
-  }, [reduced, desktop]);
-
-  const portrait = (m: (typeof team)[number], i: number) => (
-    <div
-      key={i}
-      className="tm-photo group absolute"
-      data-speed={m.speed}
-      style={{ left: `${m.x}%`, top: `${m.y}%`, width: m.size, zIndex: 10 + (i % 7) }}
-    >
-      <div className="relative">
-        <PlaceholderPortrait
-          seed={i}
-          initials={m.initials}
-          rounded={12}
-          className="aspect-[4/5] w-full shadow-[0_16px_40px_rgba(0,0,0,.35)] transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-2 group-hover:scale-[1.06]"
-        />
-        <span className="pointer-events-none absolute bottom-2 left-2 origin-bottom-left scale-90 rounded-full bg-lilac px-3 py-1.5 text-[11px] font-medium lowercase leading-none text-ink opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100">
-          {m.name} · {m.role}
-        </span>
-        {m.sticker && (
-          <span className="pointer-events-none absolute -right-4 -top-4 transition-transform duration-300 group-hover:rotate-6">
-            <Sticker kind={m.sticker} size={SZ.team} rotate={i % 2 ? 8 : -10} />
-          </span>
-        )}
-      </div>
-    </div>
-  );
+  }, [reduced]);
 
   return (
-    <section id="team" ref={sectionRef} className="relative overflow-hidden bg-ink pt-[12vh]">
-      <div className="tm-heading relative z-20 mx-auto max-w-[900px] px-5 text-center">
-        <h2 className="display text-cream text-[clamp(1.9rem,4.4vw,4.2rem)]">
-          <span className="mask-line block">
-            <span className="tm-line-inner block">
-              we are a <span className="serif-i">young,</span> future-proof
-            </span>
-          </span>
-          <span className="mask-line block">
-            <span className="tm-line-inner block">team of 42 digitally native</span>
-          </span>
-          <span className="mask-line block">
-            <span className="tm-line-inner block">
-              <span className="serif-i">creators.</span> not to brag!
-            </span>
-          </span>
-        </h2>
-      </div>
+    <section
+      id="team"
+      data-theme="motion"
+      className="relative isolate scroll-mt-[72px] bg-ink dd-pad pb-[9vh] pt-[10vh] text-cream md:pb-[12vh] md:pt-[14vh]"
+    >
+      <div className="mx-auto w-full max-w-[1480px]">
+        <div className="team-heading mx-auto max-w-[1100px] text-center">
+          <Chapter no="05" name="the people" tone="cream" align="center" className="mb-5" />
+          <h2 className="display text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[1.02]">
+            {count} people, <span className="serif-i">one studio.</span>
+          </h2>
+          <p className="mt-5 text-[12px] uppercase tracking-[0.18em] text-cream/70">
+            {roles.join(' · ')}
+          </p>
+        </div>
 
-      {desktop ? (
         <div
-          ref={collageRef}
-          className="relative mx-auto mt-[10vh] w-full max-w-[1600px]"
-          style={{ height: '450vh' }}
+          ref={gridRef}
+          className="mt-[6vh] grid grid-cols-1 gap-5 sm:grid-cols-2 md:mt-[8vh] md:gap-6 lg:grid-cols-3"
         >
-          <CloverBlob className="tm-blob pointer-events-none absolute right-[1%] top-[8%] w-[40vw] max-w-[560px]" />
-          <SplatBlob className="tm-blob pointer-events-none absolute -left-[12vw] top-[42%] w-[36vw] max-w-[480px]" />
-          <Squiggle className="pointer-events-none absolute left-[42%] top-[24%] w-[150px] text-cream/80" color="#EEEAE3" />
-          <LoopArrow className="pointer-events-none absolute right-[8%] top-[58%] w-[190px] text-cream/70" color="#EEEAE3" />
-          <TickMarks className="pointer-events-none absolute left-[8%] top-[70%] w-[80px]" color="#EEEAE3" />
-
-          {team.map(portrait)}
-        </div>
-      ) : (
-        <div ref={collageRef} className="relative mt-12 grid grid-cols-2 gap-3 px-4 pb-16">
-          <CloverBlob className="tm-blob pointer-events-none absolute -right-[20%] top-[10%] w-[70vw] opacity-80" />
-          <SplatBlob className="tm-blob pointer-events-none absolute -left-[22%] top-[46%] w-[60vw] opacity-90" />
-          {team.slice(0, 12).map((m, i) => (
-            <div key={i} className={`tm-photo relative ${i % 2 ? 'mt-8' : ''}`} data-speed={1 + (m.speed - 1) * 0.5}>
-              <div className="relative">
-                <PlaceholderPortrait
-                  seed={i}
-                  initials={m.initials}
-                  rounded={12}
-                  className="aspect-[4/5] w-full"
+          {team.map((member, index) => {
+            const lastAlone = team.length % 2 === 1 && index === team.length - 1;
+            return (
+              <div
+                key={member.id}
+                data-team-card
+                className={`h-full ${
+                  lastAlone
+                    ? 'sm:col-span-2 sm:mx-auto sm:w-[calc(50%-0.625rem)] lg:col-span-1 lg:mx-0 lg:w-full'
+                    : ''
+                }`}
+              >
+                <ProfileCard
+                  index={index}
+                  name={member.name}
+                  role={member.role}
+                  status={member.status}
+                  image={member.photo ?? media.teamPhotos[member.id] ?? media.teamPhotos[member.name] ?? ''}
+                  intro={member.intro}
+                  accent={member.band}
+                  accentInk={member.bandInk}
+                  surface={member.card}
+                  theme="light"
+                  radius={22}
+                  enableTilt
+                  tiltStrength={5}
+                  parallax={3}
+                  holo={0.35}
+                  glare={0.25}
+                  enableMobileTilt={false}
+                  onContact={() =>
+                    openContact({
+                      title: `hello ${member.name}`,
+                      subject: `hello ${member.name} — desi draft`,
+                    })
+                  }
+                  contactLabel="say hi"
+                  contactAriaLabel={`Contact desi draft about ${member.name}`}
+                  sticker={
+                    <Sticker
+                      kind={member.sticker}
+                      size={56}
+                      rotate={member.stickerSide === 'left' ? -8 : 8}
+                    />
+                  }
                 />
-                {m.sticker && (
-                  <span className="absolute -right-2 -top-3">
-                    <Sticker kind={m.sticker} size={SZ.teamSmall} rotate={i % 2 ? 8 : -10} />
-                  </span>
-                )}
               </div>
-              <p className="mt-2 text-[11px] lowercase leading-tight text-cream/70">
-                {m.name} · {m.role}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
-      )}
+
+        <p className="mt-8 text-center text-[11px] uppercase tracking-[0.18em] text-cream/70">
+          {team.every((member) => member.photo)
+            ? 'the people behind the work'
+            : 'portraits in progress · roles shown as credited'}
+        </p>
+      </div>
     </section>
   );
 }

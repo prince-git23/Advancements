@@ -1,21 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from '../../lib/smooth';
-import { projects } from '../../data/work';
-import type { PillColor } from '../../types';
-
-const PILL_CLASS: Record<PillColor, string> = {
-  lilac: 'bg-lilac text-ink',
-  lime: 'bg-lime text-ink',
-  tangerine: 'bg-tangerine text-cream',
-  periwinkle: 'bg-periwinkle text-ink',
-  berry: 'bg-berry text-cream',
-};
+import { categoryOf, portfolio } from '../../data/portfolio';
 
 /**
- * Work dropdown that hangs under the header burst. Three latest projects plus
- * "all our work". Hover-open on pointer devices, tap-toggle on touch, Esc closes
- * and returns focus to the burst (handled in Header).
+ * Work dropdown under the header burst: the three newest case studies plus the
+ * index. Hover-open on pointer devices, tap-toggle on touch, Esc closes and
+ * returns focus to the burst (handled in Header).
  */
 export function WorkMenu({
   open,
@@ -30,7 +21,7 @@ export function WorkMenu({
 }) {
   const panelRef = useRef<HTMLDivElement>(null);
   const rowsRef = useRef<(HTMLAnchorElement | null)[]>([]);
-  const items = projects.slice(0, 3);
+  const items = portfolio.slice(0, 3);
   const firstRun = useRef(true);
 
   useEffect(() => {
@@ -68,66 +59,48 @@ export function WorkMenu({
       aria-hidden={!open}
       onPointerEnter={onEnter}
       onPointerLeave={onLeave}
-      className={`fixed left-3 top-3 z-0 w-[clamp(240px,20vw,320px)] rounded-[16px] bg-cream p-3 pt-14 text-ink shadow-[0_12px_32px_rgba(0,0,0,.28)] ${
+      className={`fixed left-3 top-3 z-0 w-[clamp(250px,21vw,330px)] rounded-[16px] bg-cream p-3 pt-14 text-ink shadow-[0_12px_32px_rgba(0,0,0,.28)] ${
         open ? '' : 'pointer-events-none'
       }`}
     >
       <div className="flex flex-col gap-[10px]">
-        {items.map((p, i) => (
-          <Link
-            key={p.slug}
-            ref={(el) => {
-              rowsRef.current[i] = el;
-            }}
-            to={`/work/${p.slug}`}
-            onClick={onClose}
-            tabIndex={open ? 0 : -1}
-            className="group/row flex items-center gap-3 rounded-[10px] p-1 transition-transform duration-200 hover:translate-x-1"
-          >
-            <span
-              aria-hidden="true"
-              className="h-11 w-11 shrink-0 overflow-hidden rounded-[8px]"
-              style={{
-                background: `linear-gradient(145deg, ${p.colors[0]} 0%, ${p.colors[1]} 100%)`,
-                boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.06)',
+        {items.map((p, i) => {
+          const cat = categoryOf(p.category);
+          return (
+            <Link
+              key={p.id}
+              ref={(el) => {
+                rowsRef.current[i] = el;
               }}
-            />
-            <span className="min-w-0 flex-1">
+              to={`/work/${p.slug}`}
+              onClick={onClose}
+              tabIndex={open ? 0 : -1}
+              className="group/row flex items-center gap-3 rounded-[10px] p-1 transition-transform duration-200 hover:translate-x-1"
+            >
               <span
-                className={`mb-1 inline-block rounded-full px-2 py-[2px] text-[10px] font-bold lowercase leading-[1.2] ${PILL_CLASS[p.pill]}`}
+                aria-hidden="true"
+                className="grid h-11 w-11 shrink-0 place-items-center rounded-[8px] text-[8px] uppercase leading-[1.2] tracking-[0.1em]"
+                style={{
+                  background: p.cover.color ?? cat.color,
+                  color: p.cover.color && ['#E8B4F5', '#E4FBA8', '#8499F8'].includes(p.cover.color) ? '#0A0A0A' : '#EEEAE3',
+                }}
               >
-                {p.client}
+                {cat.short}
               </span>
-              <span className="display relative block text-[14px] font-extrabold leading-[1.1] text-ink">
-                {p.title}
-                <svg
-                  viewBox="0 0 120 10"
-                  preserveAspectRatio="none"
-                  className="pointer-events-none absolute -bottom-[3px] left-0 h-[6px] w-full opacity-0 transition-opacity duration-150 group-hover/row:opacity-100 group-hover/row:[&_path]:[stroke-dashoffset:0]"
-                  aria-hidden="true"
-                >
-                  <path
-                    className="doodle-path"
-                    pathLength={1}
-                    d="M2 6c16-4 34-4 58-3s30 2 58-2"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    style={{ transitionDuration: '0.3s' }}
-                  />
-                </svg>
+              <span className="min-w-0 flex-1">
+                <span className="mb-1 block text-[9px] uppercase tracking-[0.14em] text-ink/60">{p.status}</span>
+                <span className="display block text-[14px] leading-[1.1] text-ink">{p.title}</span>
               </span>
-            </span>
-          </Link>
-        ))}
+            </Link>
+          );
+        })}
       </div>
 
       <Link
         to="/work"
         onClick={onClose}
         tabIndex={open ? 0 : -1}
-        className="group/all mt-3 flex h-10 w-full items-center justify-center gap-2 rounded-full bg-ink px-4 text-[14px] font-semibold lowercase text-cream transition-colors duration-200 hover:bg-[#222]"
+        className="group/all mt-3 flex h-10 w-full items-center justify-center gap-2 rounded-full bg-ink px-4 text-[13px] font-semibold lowercase text-cream transition-colors duration-200 hover:bg-[#222]"
       >
         all our work
         <svg

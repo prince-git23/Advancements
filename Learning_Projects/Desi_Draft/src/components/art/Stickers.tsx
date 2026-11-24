@@ -12,6 +12,7 @@ import {
   sparklePath,
   spikyStarPath,
 } from './shapes';
+import { stickerPx, type StickerSize } from './sizes';
 
 const INK = '#0A0A0A';
 const ROYAL = '#4B63E8';
@@ -263,23 +264,30 @@ function Art({ kind }: { kind: StickerKey }) {
 
 export function Sticker({
   kind,
-  size = 84,
+  size = 'md',
   rotate = 0,
   className = '',
   style,
   shadow = true,
 }: {
   kind: StickerKey;
-  size?: number;
+  /** scale key (sm 56 / md 84 / lg 112 / xl 136) or raw px */
+  size?: StickerSize | number;
   rotate?: number;
   className?: string;
   style?: CSSProperties;
   shadow?: boolean;
 }) {
+  const px = stickerPx(size);
   return (
     <div
+      data-collide="sticker"
       className={`pointer-events-none select-none ${className}`}
-      style={{ width: size, height: size, ...style }}
+      style={{
+        width: `calc(${px}px * var(--sticker-scale, 1))`,
+        height: `calc(${px}px * var(--sticker-scale, 1))`,
+        ...style,
+      }}
       aria-hidden="true"
     >
       <div style={{ width: '100%', height: '100%', transform: `rotate(${rotate}deg)` }}>

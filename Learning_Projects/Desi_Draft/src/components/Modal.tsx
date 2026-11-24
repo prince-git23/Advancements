@@ -23,7 +23,7 @@ export function Modal({
       if (e.key === 'Escape') onClose();
       if (e.key === 'Tab') {
         const nodes = panelRef.current?.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
+          'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
         );
         if (!nodes || nodes.length === 0) return;
         const first = nodes[0];
@@ -50,7 +50,7 @@ export function Modal({
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[10000] flex items-center justify-center p-4"
+          className="fixed inset-0 z-[var(--z-modal)] flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
